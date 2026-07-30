@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Miftahul Jony - Portfolio Website. Full-Stack Developer showcasing projects, skills, and experience.">
+  <title>Miftahul Jony | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">MJ<span class="accent">.</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <p class="hero-greeting fade-in">Hello, I'm</p>
+      <h1 class="hero-name fade-in">Miftahul Jony</h1>
+      <h2 class="hero-title fade-in">Full-Stack Developer</h2>
+      <p class="hero-description fade-in">
+        I build modern, responsive, and user-friendly web applications.
+        Passionate about clean code and great user experiences.
+      </p>
+      <div class="hero-cta fade-in">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm a passionate developer who loves building things for the web.
+            I focus on creating clean, efficient, and scalable solutions that
+            solve real-world problems.
+          </p>
+          <p>
+            With a strong foundation in both front-end and back-end technologies,
+            I enjoy working across the full stack to bring ideas to life. I'm always
+            eager to learn new technologies and improve my craft.
+          </p>
+          <p>
+            When I'm not coding, you can find me exploring new technologies,
+            contributing to open-source projects, or sharing knowledge with the
+            developer community.
+          </p>
+        </div>
+        <div class="about-details">
+          <div class="detail-item">
+            <span class="detail-label">Name</span>
+            <span class="detail-value">Miftahul Jony</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">Available Worldwide</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Availability</span>
+            <span class="detail-value">Open to Opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="skill-category-title">Front-End</h3>
+          <ul class="skill-list">
+            <li class="skill-item">HTML5</li>
+            <li class="skill-item">CSS3 / Sass</li>
+            <li class="skill-item">JavaScript (ES6+)</li>
+            <li class="skill-item">React</li>
+            <li class="skill-item">Responsive Design</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-category-title">Back-End</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Node.js</li>
+            <li class="skill-item">Python</li>
+            <li class="skill-item">REST APIs</li>
+            <li class="skill-item">SQL / NoSQL</li>
+            <li class="skill-item">Express.js</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-category-title">Tools &amp; Others</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Git / GitHub</li>
+            <li class="skill-item">VS Code</li>
+            <li class="skill-item">Docker</li>
+            <li class="skill-item">CI/CD</li>
+            <li class="skill-item">Agile / Scrum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">Project 1</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-description">
+              A full-featured online store with product management, shopping cart,
+              and secure checkout built with React and Node.js.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Live Demo &rarr;</a>
+              <a href="#" class="project-link">Source Code &rarr;</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">Project 2</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Task Management App</h3>
+            <p class="project-description">
+              A collaborative task manager with real-time updates, drag-and-drop
+              functionality, and team workspaces.
+            </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Express</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Live Demo &rarr;</a>
+              <a href="#" class="project-link">Source Code &rarr;</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">Project 3</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Weather Dashboard</h3>
+            <p class="project-description">
+              A weather application that displays current conditions and forecasts
+              using real-time API data with beautiful visualizations.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Live Demo &rarr;</a>
+              <a href="#" class="project-link">Source Code &rarr;</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <p class="contact-description">
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of something great. Feel free to reach out!
+        </p>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+        <div class="contact-links">
+          <a href="https://github.com/miftahuljony3" class="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:your.email@example.com" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Miftahul Jony. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
