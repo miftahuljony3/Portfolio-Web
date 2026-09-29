@@ -156,3 +156,68 @@ solFilters.forEach(btn => {
     });
   });
 });
+
+// ===========================
+// Booking: preselect service from service cards
+// ===========================
+document.querySelectorAll('.svc-cta[data-service]').forEach(link => {
+  link.addEventListener('click', () => {
+    const radio = document.querySelector(`#book-form input[name="service"][value="${CSS.escape(link.dataset.service)}"]`);
+    if (radio) radio.checked = true;
+  });
+});
+
+// ===========================
+// Booking: compose brief → clipboard → Messenger
+// ===========================
+const bookForm = document.getElementById('book-form');
+const bookStatus = document.getElementById('book-status');
+const MESSENGER_URL = 'https://m.me/miftahuljony2';
+
+if (bookForm) {
+  bookForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const data = new FormData(bookForm);
+    const required = ['name', 'reach', 'details'];
+    let firstInvalid = null;
+    required.forEach(key => {
+      const el = bookForm.elements[key];
+      const bad = !String(data.get(key) || '').trim();
+      el.classList.toggle('invalid', bad);
+      if (bad && !firstInvalid) firstInvalid = el;
+    });
+    if (firstInvalid) {
+      bookStatus.className = 'form-note err';
+      bookStatus.textContent = 'Please fill in your name, how to reach you, and the project details.';
+      firstInvalid.focus();
+      return;
+    }
+
+    const brief = [
+      'Hi Miftahul, I would like to book a service.',
+      '',
+      `Service: ${data.get('service')}`,
+      `Name: ${data.get('name')}`,
+      `Contact: ${data.get('reach')}`,
+      `Budget: ${data.get('budget') || 'Not sure yet'}`,
+      `Timeline: ${data.get('timeline')}`,
+      '',
+      `Details: ${data.get('details')}`,
+      '',
+      '(sent from mjony3.com)'
+    ].join('\n');
+
+    // Open synchronously so popup blockers allow it
+    const win = window.open(MESSENGER_URL, '_blank', 'noopener');
+    let copied = false;
+    try { await navigator.clipboard.writeText(brief); copied = true; } catch (err) {}
+
+    bookStatus.className = 'form-note ok';
+    bookStatus.textContent = copied
+      ? 'Brief copied. Paste it into Messenger and press send.'
+      : 'Messenger is opening. Copy your details from the form into the chat.';
+    if (!win) {
+      bookStatus.innerHTML = `${bookStatus.textContent} <a href="${MESSENGER_URL}" target="_blank" rel="noopener noreferrer">Open Messenger ↗</a>`;
+    }
+  });
+}
