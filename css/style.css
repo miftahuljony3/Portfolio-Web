@@ -1490,3 +1490,7 @@ main > .section { content-visibility: auto; contain-intrinsic-size: auto 1100px;
 .hero-art .aurora.a1 { top: -180px; }
 .hero-art .aurora.a2 { top: 40px; }
 .hero-art .aurora.a3 { top: 560px; bottom: auto; }
+
+/* First slide is painted immediately on page load (fast FCP/LCP); entrance
+   animations only play when the slider changes slides. */
+.slide.is-initial .anim, .slide.is-initial .art3d { transition: none !important; opacity: 1; transform: none; filter: none; }

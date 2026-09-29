@@ -276,6 +276,7 @@ if (bookForm) {
     next = (next + slides.length) % slides.length;
     if (next === index && restart) { schedule(true); return; }
     const prev = slides[index];
+    slides.forEach(slide => slide.classList.remove('is-initial'));
     prev.classList.remove('is-active');
     prev.classList.add('is-leaving');
     setTimeout(() => prev.classList.remove('is-leaving'), 700);
