@@ -107,10 +107,9 @@ if (finePointer && !reducedMotion) {
   }, { passive: true });
 
   // Hero parallax on floating frames
-  const stage = document.querySelector('.hero-stage');
-  const layers = stage ? stage.querySelectorAll('[data-depth]') : [];
+  const layers = document.querySelectorAll('.hero [data-depth]');
   let raf = 0;
-  if (stage && layers.length) {
+  if (layers.length) {
     document.querySelector('.hero').addEventListener('pointermove', e => {
       const x = e.clientX / window.innerWidth - 0.5;
       const y = e.clientY / window.innerHeight - 0.5;
@@ -221,3 +220,108 @@ if (bookForm) {
     }
   });
 }
+
+// ===========================
+// Hero slider
+// ===========================
+(function heroSlider() {
+  const root = document.querySelector('.hero-slider');
+  if (!root) return;
+  const slides = [...root.querySelectorAll('.slide')];
+  const tabs = [...root.querySelectorAll('.slider-tab')];
+  const toggleBtn = root.querySelector('[data-toggle]');
+  const DURATION = 7000;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let index = 0;
+  let timer = 0;
+  let startedAt = 0;
+  let remaining = DURATION;
+  let userPaused = reduce;   // reduced motion: no autoplay until the user presses play
+  let hold = false;          // temporary pause (hover / focus / hidden tab)
+
+  root.style.setProperty('--dur', DURATION + 'ms');
+
+  function show(next, { restart = true } = {}) {
+    next = (next + slides.length) % slides.length;
+    if (next === index && restart) { schedule(true); return; }
+    const prev = slides[index];
+    prev.classList.remove('is-active');
+    prev.classList.add('is-leaving');
+    setTimeout(() => prev.classList.remove('is-leaving'), 700);
+
+    slides.forEach((slide, i) => {
+      const active = i === next;
+      slide.classList.toggle('is-active', active);
+      slide.toggleAttribute('inert', !active);
+      slide.setAttribute('aria-hidden', String(!active));
+    });
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('is-active', i === next);
+      tab.classList.toggle('is-done', i < next);
+      tab.setAttribute('aria-selected', String(i === next));
+      // restart the CSS progress animation
+      const bar = tab.querySelector('.st-bar i');
+      if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+    });
+    index = next;
+    if (restart) schedule(true);
+  }
+
+  function schedule(reset) {
+    clearTimeout(timer);
+    if (reset) remaining = DURATION;
+    const playing = !userPaused && !hold;
+    root.classList.toggle('is-playing', !userPaused);
+    root.classList.toggle('is-paused', userPaused);
+    root.classList.toggle('is-hold', hold && !userPaused);
+    if (!playing) return;
+    startedAt = performance.now();
+    timer = setTimeout(() => show(index + 1), remaining);
+  }
+
+  function setHold(on) {
+    if (on === hold) return;
+    if (on && !userPaused) remaining = Math.max(0, remaining - (performance.now() - startedAt));
+    hold = on;
+    schedule(false);
+  }
+
+  tabs.forEach(tab => tab.addEventListener('click', () => show(Number(tab.dataset.go))));
+  root.querySelector('[data-prev]').addEventListener('click', () => show(index - 1));
+  root.querySelector('[data-next]').addEventListener('click', () => show(index + 1));
+  toggleBtn.addEventListener('click', () => {
+    userPaused = !userPaused;
+    toggleBtn.setAttribute('aria-label', userPaused ? 'Play autoplay' : 'Pause autoplay');
+    schedule(true);
+  });
+
+  // Pause while the pointer or keyboard focus is inside, and when the tab is hidden
+  const slidesEl = root.querySelector('.slides');
+  slidesEl.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setHold(true); });
+  slidesEl.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') setHold(false); });
+  root.addEventListener('focusin', () => setHold(true));
+  root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) setHold(false); });
+  document.addEventListener('visibilitychange', () => setHold(document.hidden));
+
+  // Keyboard arrows when the slider has focus
+  root.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea, select')) return;
+    if (e.key === 'ArrowRight') show(index + 1);
+    if (e.key === 'ArrowLeft') show(index - 1);
+  });
+
+  // Touch swipe
+  let x0 = null, y0 = null;
+  slidesEl.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  slidesEl.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    const dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) show(index + (dx < 0 ? 1 : -1));
+    x0 = y0 = null;
+  }, { passive: true });
+
+  if (userPaused) toggleBtn.setAttribute('aria-label', 'Play autoplay');
+  schedule(true);
+})();
