@@ -23,5 +23,5 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 ## Deployment
 
-Every push to `main` deploys to GitHub Pages via `.github/workflows/static.yml`.
-The custom domain `mjony3.com` is set in **Settings → Pages → Custom domain** (and in `CNAME`).
+The live site is served by Cloudflare Workers (static assets); `npx wrangler deploy` publishes it.
+Pushes to `main` also deploy the GitHub Pages copy via `.github/workflows/static.yml`.

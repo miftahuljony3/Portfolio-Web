@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mjony3-portfolio",
+  "account_id": "ef57506603a811006d9d3fc9a64ddd3c",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "routes": [
+    { "pattern": "mjony3.com", "custom_domain": true },
+    { "pattern": "www.mjony3.com", "custom_domain": true }
+  ]
+}

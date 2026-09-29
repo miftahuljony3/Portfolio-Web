@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+.assetsignore
+wrangler.jsonc
+README.md
+LICENSE
+node_modules
+.wrangler
+case-studies/*.md
+js/worker.js
