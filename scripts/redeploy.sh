@@ -40,7 +40,7 @@ SMOKE_CHECKS=(
   "/ 200 id=\"hero-slides\""
   "/css/style.css 200 .hero-slider"
   "/js/script.js 200 heroSlider"
-  "/case-studies/bpda-smart-app.html 200 BPDA"
+  "/case-studies/bpda-smart-app 200 BPDA"
   "/assets/work/mjpay.webp 200"
   "/favicon.svg 200"
   "/this-page-does-not-exist 404"
