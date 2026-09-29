@@ -125,3 +125,34 @@ if (finePointer && !reducedMotion) {
     }, { passive: true });
   }
 }
+
+// ===========================
+// Scroll progress bar
+// ===========================
+const progress = document.getElementById('scroll-progress');
+if (progress) {
+  const setProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.setProperty('--p', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+  };
+  window.addEventListener('scroll', setProgress, { passive: true });
+  window.addEventListener('resize', setProgress);
+  setProgress();
+}
+
+// ===========================
+// Solutions filter
+// ===========================
+const solFilters = document.querySelectorAll('.sol-filter');
+const solItems = document.querySelectorAll('#sol-grid .sol');
+
+solFilters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.filter;
+    solFilters.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    solItems.forEach(item => {
+      item.hidden = cat !== 'all' && item.dataset.cat !== cat;
+      if (!item.hidden) item.classList.add('visible');
+    });
+  });
+});

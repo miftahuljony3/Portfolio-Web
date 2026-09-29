@@ -44,18 +44,20 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
   <header class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="#top" class="nav-logo" aria-label="Miftahul Jony, home">
-        <span class="logo-mark">MJ</span><span class="logo-text">Miftahul Jony</span>
+        <span class="coin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span><span class="logo-text">Miftahul Jony<small>DevOps · Systems</small></span>
       </a>
       <nav aria-label="Primary">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#solutions" class="nav-link hot">Solutions</a></li>
           <li><a href="#systems" class="nav-link">Systems</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
           <li class="nav-only-mobile"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -64,7 +66,7 @@
           <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         </button>
-        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's talk</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta btn-glow">Let's talk <span aria-hidden="true">→</span></a>
         <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
           <span class="hamburger"></span>
         </button>
@@ -97,19 +99,26 @@
 
       <div class="container hero-layout">
         <div class="hero-content">
-          <p class="eyebrow reveal"><span class="status-dot"></span> Available for new projects</p>
+          <p class="eyebrow eyebrow-split reveal"><span><span class="status-dot"></span> Available for new projects</span><a href="#solutions"><b>28+</b> launch-ready solutions <span aria-hidden="true">→</span></a></p>
           <p class="hero-role reveal"><b>Principal DevOps &amp; Infrastructure Architect</b> · Network &amp; systems engineer</p>
           <h1 class="hero-name reveal">
-            I design &amp; build <em class="serif">digital products</em> people rely on.
+            I design &amp; build <em class="serif">digital products</em> <span class="hl">people rely on.</span>
           </h1>
           <p class="hero-description reveal">
-            I'm <strong>Miftahul Jony</strong>. I design networks, infrastructure and distributed systems,
+            I'm <strong>Miftahul Jony</strong>. I design <strong>networks, infrastructure and distributed systems</strong>,
             and ship products built to survive code review, real traffic and years of growth, including a telemedicine platform, a
             mobile-money payment gateway, a healthcare portal and a finance SaaS.
           </p>
           <div class="hero-cta reveal">
             <a href="#work" class="btn btn-primary">See selected work <span aria-hidden="true">→</span></a>
-            <a href="#contact" class="btn btn-ghost">Start a project</a>
+            <a href="#solutions" class="btn btn-ghost">Browse ready solutions</a>
+          </div>
+          <div class="trust reveal">
+            <span class="trust-label">Live in production</span>
+            <a href="https://bpdatm.com" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA Telemedicine</a>
+            <a href="https://mrjorg.site" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>MJPay</a>
+            <a href="https://portal.bpda.site" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA Portal</a>
+            <a href="https://bpdafms.com" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA FMS</a>
           </div>
         </div>
 
@@ -128,15 +137,16 @@
           </figure>
           <div class="float-chip c-a" data-depth="60"><span class="chip-dot ok"></span> Payment matched in ~8s</div>
           <div class="float-chip c-b" data-depth="36"><span class="chip-rx">℞</span> e-Prescription printed</div>
+          <div class="hero-coin" data-depth="70"><span class="coin coin-lg coin-spin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span></div>
         </div>
       </div>
 
       <div class="container">
         <dl class="stats reveal">
-          <div><dt>Live products</dt><dd>4</dd></div>
+          <div><dt>Live production products</dt><dd>4</dd></div>
+          <div class="stat-key"><dt>Launch-ready solutions</dt><dd>28+</dd></div>
           <div><dt>Telemedicine centres on BPDA</dt><dd>58</dd></div>
-          <div><dt>Payment confirmed</dt><dd>~8s</dd></div>
-          <div><dt>Languages shipped</dt><dd>বাংলা · EN</dd></div>
+          <div><dt>Mobile-money payment confirmed</dt><dd>~8s</dd></div>
         </dl>
       </div>
     </section>
@@ -168,9 +178,9 @@
               </div>
             </a>
             <div class="showcase-info">
-              <p class="project-meta"><span class="badge">Flagship</span> Healthcare · Telemedicine</p>
+              <p class="project-meta"><span class="badge">Flagship</span><span class="live-badge">LIVE</span> Healthcare · Telemedicine</p>
               <h3 class="project-title">BPDA Telemedicine App</h3>
-              <p class="project-tagline">A doctor at every BPDA centre, by video, with an e-prescription in hand.</p>
+              <p class="project-tagline">A doctor at every BPDA centre, <span class="hl">by video</span>, with an e-prescription in hand.</p>
               <p class="project-description">
                 Centre facilitators connect rural patients with qualified doctors in real time, write
                 the prescription together and print it on the spot. Specialist care reaches the village
@@ -198,9 +208,9 @@
           <div class="feat-block">
             <p class="flow-title">Every feature <span>12 capabilities, all live today</span></p>
             <ul class="feat-grid">
-              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg></span><div><h4>Live video consultation</h4><p>One tap from the centre rings the doctor, who sees and examines the patient on screen, with no travel to the city.</p></div></li>
-              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h7a4 4 0 0 1 0 8H6zM6 12v8M11 12l7 8M18 12l-5 8"/></svg></span><div><h4>Collaborative e-prescription</h4><p>The doctor writes the diagnosis, medicines and advice live during the call, and it prints before the patient leaves.</p></div></li>
-              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div><h4>BPDA AI assistant</h4><p>Built-in chat that knows each user's role: app help, medicine lookup from the approved list, general guidance.</p></div></li>
+              <li class="feat key spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg></span><div><h4>Live video consultation</h4><p>One tap from the centre rings the doctor, who sees and examines the patient on screen, with no travel to the city.</p></div></li>
+              <li class="feat key spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h7a4 4 0 0 1 0 8H6zM6 12v8M11 12l7 8M18 12l-5 8"/></svg></span><div><h4>Collaborative e-prescription</h4><p>The doctor writes the diagnosis, medicines and advice live during the call, and it prints before the patient leaves.</p></div></li>
+              <li class="feat key spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div><h4>BPDA AI assistant</h4><p>Built-in chat that knows each user's role: app help, medicine lookup from the approved list, general guidance.</p></div></li>
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><div><h4>24/7 live doctor status</h4><p>Each centre sees its assigned doctor online in real time. Busy or offline calls escalate to an administrator.</p></div></li>
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 11h6M9 15h4"/></svg></span><div><h4>Centre management</h4><p>Patient registration, visit history, prescription records and monthly reports in one place.</p></div></li>
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><h4>Android app for the field</h4><p>Facilitators run the entire flow from a phone on ordinary mobile data.</p></div></li>
@@ -225,9 +235,9 @@
               </div>
             </a>
             <div class="showcase-info">
-              <p class="project-meta"><span class="badge">Flagship</span> Fintech · Payments</p>
+              <p class="project-meta"><span class="badge">Flagship</span><span class="live-badge">LIVE</span> Fintech · Payments</p>
               <h3 class="project-title">MJPay</h3>
-              <p class="project-tagline">Get paid on mobile money, confirmed automatically.</p>
+              <p class="project-tagline">Get paid on mobile money, <span class="hl">confirmed automatically.</span></p>
               <p class="project-description">
                 Turns a bKash or Nagad "send money" into a real payment gateway: hosted checkout, receipt
                 matching from the operator's SMS, and a signed webhook to your system, usually within
@@ -257,9 +267,9 @@
             <p class="flow-title">Every feature <span>16 capabilities, all live today</span></p>
             <ul class="feat-grid">
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></span><div><h4>Hosted checkout</h4><p>A phone-first payment page: pick a wallet, get a number, pay from the wallet app. Nothing to build.</p></div></li>
-              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><div><h4>Automatic confirmation</h4><p>The operator's receipt SMS is matched by amount, number and TrxID within seconds, with no manual approval.</p></div></li>
-              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg></span><div><h4>One API, both directions</h4><p>The same four wallets take payments and send them, money in and out on one key.</p></div></li>
-              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><div><h4>Payouts in seconds</h4><p><code>POST /v1/payouts</code> and an agent phone dials USSD itself. Live runs have completed in 12 and 15 seconds.</p></div></li>
+              <li class="feat key spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><div><h4>Automatic confirmation</h4><p>The operator's receipt SMS is matched by amount, number and TrxID within seconds, with no manual approval.</p></div></li>
+              <li class="feat key spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg></span><div><h4>One API, both directions</h4><p>The same four wallets take payments and send them, money in and out on one key.</p></div></li>
+              <li class="feat key spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><div><h4>Payouts in seconds</h4><p><code>POST /v1/payouts</code> and an agent phone dials USSD itself. Live runs have completed in 12 and 15 seconds.</p></div></li>
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><div><h4>Payment links</h4><p>No website or developer needed. Share a link on Facebook, WhatsApp or SMS.</p></div></li>
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></span><div><h4>QR payments</h4><p>Every link carries a QR code for counters, posters or invoices, with no terminal required.</p></div></li>
               <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 16l10-10 3 3-10 10H6z"/></svg></span><div><h4>Signed webhooks</h4><p>HMAC-signed events, retried with backoff, with every delivery attempt visible in the portal.</p></div></li>
@@ -285,7 +295,7 @@
                 <img src="assets/work/bpda-portal.webp" alt="BPDA Health Portal: find verified doctors, hospitals and health workers" width="1440" height="900" loading="lazy">
               </div>
             </a>
-            <p class="project-meta">Healthcare · Platform</p>
+            <p class="project-meta"><span class="live-badge">LIVE</span> Healthcare · Platform</p>
             <h3 class="project-title">BPDA Health Portal</h3>
             <p class="project-description">
               One platform for healthcare and health education in Bangladesh, with a verified directory of
@@ -303,7 +313,7 @@
                 <img src="assets/work/bpda-fms.webp" alt="BPDA FMS: keep accounts simple, with a dashboard preview" width="1440" height="900" loading="lazy">
               </div>
             </a>
-            <p class="project-meta">SaaS · Finance</p>
+            <p class="project-meta"><span class="live-badge">LIVE</span> SaaS · Finance</p>
             <h3 class="project-title">BPDA FMS</h3>
             <p class="project-description">
               A finance-management SaaS for Bangladesh covering personal expenses, shop dues, inventory and
@@ -331,7 +341,7 @@
             </div>
           </article>
           <article class="mini-card reveal spot">
-            <div class="mini-art art-site" aria-hidden="true"><span class="logo-mark big">MJ</span></div>
+            <div class="mini-art art-site" aria-hidden="true"><span class="coin coin-spin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span></div>
             <div>
               <p class="project-meta">Open source · Web</p>
               <h3>This portfolio</h3>
@@ -343,12 +353,148 @@
       </div>
     </section>
 
+    <!-- ================= Solutions ================= -->
+    <section class="section section-alt" id="solutions">
+      <div class="container">
+        <div class="sol-head">
+          <header class="section-head">
+            <p class="section-kicker"><span>02</span> Launch-ready solutions</p>
+            <h2 class="section-title"><span class="hl">28+ platforms</span>, ready to make <em class="serif">yours.</em></h2>
+          </header>
+          <ul class="sol-perks">
+            <li>Proven, pre-built source code, so there's no starting from zero</li>
+            <li>Customised to your brand, workflow and language</li>
+            <li>Deployed, secured and handed over, with support</li>
+          </ul>
+        </div>
+        <div class="sol-filters" role="group" aria-label="Filter solutions by category"><button class="sol-filter" type="button" data-filter="all" aria-pressed="true">All<span>28</span></button><button class="sol-filter" type="button" data-filter="commerce" aria-pressed="false">Commerce &amp; payments<span>6</span></button><button class="sol-filter" type="button" data-filter="business" aria-pressed="false">Business<span>7</span></button><button class="sol-filter" type="button" data-filter="health" aria-pressed="false">Health<span>2</span></button><button class="sol-filter" type="button" data-filter="education" aria-pressed="false">Education<span>3</span></button><button class="sol-filter" type="button" data-filter="media" aria-pressed="false">Media<span>2</span></button><button class="sol-filter" type="button" data-filter="services" aria-pressed="false">Services &amp; public<span>8</span></button></div>
+        <ul class="sol-grid" id="sol-grid">
+            <li class="sol featured reveal" data-cat="commerce" style="--tint:#8b7bff">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span><span class="sol-cat">Commerce &amp; payments</span></div>
+              <h3>Payment gateway</h3><p>Mobile-money checkout, webhooks and payouts, the engine behind MJPay.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="commerce" style="--tint:#8b7bff">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></span><span class="sol-cat">Commerce &amp; payments</span></div>
+              <h3>E-commerce store</h3><p>Catalogue, cart, checkout, orders and an admin dashboard.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="commerce" style="--tint:#8b7bff">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="12" rx="2"/><path d="M8 19h8M12 15v4M8 8h8"/></svg></span><span class="sol-cat">Commerce &amp; payments</span></div>
+              <h3>POS system</h3><p>Point of sale with inventory, invoices and sales reports.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="commerce" style="--tint:#8b7bff">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="sol-cat">Commerce &amp; payments</span></div>
+              <h3>Courier fraud checker</h3><p>Checks a customer's delivery history before you ship cash-on-delivery orders.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="commerce" style="--tint:#8b7bff">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11v2a2 2 0 0 0 2 2h2l6 4V5L7 9H5a2 2 0 0 0-2 2zM17 8a5 5 0 0 1 0 8"/></svg></span><span class="sol-cat">Commerce &amp; payments</span></div>
+              <h3>SMM panel</h3><p>Social media marketing services panel with orders and wallet.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="commerce" style="--tint:#8b7bff">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg></span><span class="sol-cat">Commerce &amp; payments</span></div>
+              <h3>Digital products shop</h3><p>Sell and deliver downloadable products and licences.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol featured reveal" data-cat="health" style="--tint:#2dd4bf">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M12 8v6M9 11h6"/></svg></span><span class="sol-cat">Health</span></div>
+              <h3>Hospital management</h3><p>Patients, appointments, doctors, billing and pharmacy.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="health" style="--tint:#2dd4bf">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 20h16L14 9V3"/><path d="M7 15h10"/></svg></span><span class="sol-cat">Health</span></div>
+              <h3>Diagnostic lab system</h3><p>Test orders, sample tracking and printable reports.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.6 4 2.8 4 6"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>CRM</h3><p>Leads, contacts, deals pipeline and follow-ups.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>Company website</h3><p>Corporate site with services, team and contact.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>IT company website</h3><p>Agency or software firm site with portfolio and services.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1 7a5 5 0 0 1-10 0zM12 15v6M8 21h8"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>Bar &amp; restaurant</h3><p>Menu, orders, tables and billing for hospitality.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.5 8.5L20 19M8.5 15.5L20 5"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>Tailor shop manager</h3><p>Measurements, orders, delivery dates and payments.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>Landing pages (2 styles)</h3><p>High-converting product and campaign landing pages.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="business" style="--tint:#38bdf8">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><span class="sol-cat">Business</span></div>
+              <h3>Bio / profile page</h3><p>Personal bio-link and profile page.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol featured reveal" data-cat="education" style="--tint:#f59e0b">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span><span class="sol-cat">Education</span></div>
+              <h3>School management</h3><p>Students, attendance, results, fees and notices.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="education" style="--tint:#f59e0b">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 8l5 3-5 3z"/><path d="M8 21h8"/></svg></span><span class="sol-cat">Education</span></div>
+              <h3>Online course (LMS)</h3><p>Video courses, enrolment, progress and payments.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="education" style="--tint:#f59e0b">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3"/><path d="M20 4v14h-7"/></svg></span><span class="sol-cat">Education</span></div>
+              <h3>Tutorial platform</h3><p>Tutorial and blog site with categories and search.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="media" style="--tint:#f472b6">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-4 4 3 3-2 6 4"/></svg></span><span class="sol-cat">Media</span></div>
+              <h3>News portal + photo card</h3><p>News site with a one-click social photo-card generator.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="media" style="--tint:#f472b6">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h4M7 16h4M14 12h3v4h-3z"/></svg></span><span class="sol-cat">Media</span></div>
+              <h3>E-paper</h3><p>Digital newspaper edition with page-by-page viewer.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol featured reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>ISP billing &amp; management</h3><p>Customers, packages, monthly billing and dues for ISPs.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>Internet provider website</h3><p>Public site with packages, coverage and sign-up.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/><circle cx="8" cy="14.5" r=".8"/><circle cx="16" cy="14.5" r=".8"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>Bus ticket booking</h3><p>Routes, seat selection, booking and tickets.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>Courier management</h3><p>Parcel booking, tracking, riders and COD settlement.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 16l20-8-4 12-5-4-3 4v-5z"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>Travel agency</h3><p>Tour packages, bookings and enquiries.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 6.5-8 11-8 11z"/><path d="M8 12h8"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>NGO platform</h3><p>Programmes, donations, beneficiaries and reports.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>Union Parishad services</h3><p>Digital citizen services and certificates for local government.</p><span class="ready">● source ready</span>
+            </li>
+            <li class="sol reveal" data-cat="services" style="--tint:#22c55e">
+              <div class="sol-top"><span class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg></span><span class="sol-cat">Services &amp; public</span></div>
+              <h3>AI chatbot</h3><p>Website chatbot that answers customer questions 24/7.</p><span class="ready">● source ready</span>
+            </li>
+        </ul>
+        <div class="sol-cta reveal">
+          <p><strong>Need something close to one of these?</strong> Starting from a ready codebase means faster delivery and lower cost.</p>
+          <a href="#contact" class="btn btn-primary btn-glow">Request a demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= About ================= -->
-    <section class="section section-alt" id="about">
+    <section class="section" id="about">
       <div class="container">
         <div class="about-grid">
           <header class="section-head">
-            <p class="section-kicker"><span>02</span> About</p>
+            <p class="section-kicker"><span>03</span> About</p>
             <h2 class="section-title">Architect first, <em class="serif">engineer</em> all the way down.</h2>
             <div class="about-portrait reveal" aria-hidden="true">
               <div class="aurora a1"></div><div class="aurora a2"></div>
@@ -357,13 +503,13 @@
                 <g class="orbit-spin"><circle cx="255" cy="150" r="4" class="dot-a"/></g>
                 <g class="orbit-spin slow"><circle cx="150" cy="10" r="3" class="dot-b"/></g>
               </svg>
-              <span class="logo-mark big">MJ</span>
+              <span class="coin coin-xl coin-spin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span>
               <p class="portrait-caption">Miftahul Jony<br><span>DevOps · Networks · Systems</span></p>
             </div>
           </header>
           <div class="about-body reveal">
             <p class="about-lead">
-              I'm a <strong>Principal DevOps &amp; Infrastructure Architect</strong> and full-stack engineer. I design
+              I'm a <strong class="hl">Principal DevOps &amp; Infrastructure Architect</strong> and full-stack engineer. I design
               systems end to end, from the network edge and infrastructure up through APIs, data and the interface people touch.
             </p>
             <p>
@@ -412,7 +558,7 @@
     <section class="section" id="systems">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker"><span>03</span> System design &amp; networking</p>
+          <p class="section-kicker"><span>04</span> System design &amp; networking</p>
           <h2 class="section-title">Designing systems that <em class="serif">scale</em> and stay up.</h2>
           <p class="section-sub">How I think about architecture, from the packet at the edge to the event in the database.</p>
         </header>
@@ -523,7 +669,7 @@
     <section class="section section-alt" id="skills">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker"><span>04</span> Skills</p>
+          <p class="section-kicker"><span>05</span> Skills</p>
           <h2 class="section-title">The full stack, from <em class="serif">packets</em> to pixels.</h2>
         </header>
         <div class="bento">
@@ -606,7 +752,7 @@
     <section class="section" id="principles">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker"><span>05</span> Engineering principles</p>
+          <p class="section-kicker"><span>06</span> Engineering principles</p>
           <h2 class="section-title">Built to <em class="serif">withstand</em> production.</h2>
         </header>
         <ol class="principles">
@@ -624,7 +770,7 @@
     <section class="section section-alt" id="process">
       <div class="container">
         <header class="section-head">
-          <p class="section-kicker"><span>06</span> Process</p>
+          <p class="section-kicker"><span>07</span> Process</p>
           <h2 class="section-title">How we'll <em class="serif">work together.</em></h2>
         </header>
         <ol class="process">
@@ -641,7 +787,7 @@
       <div class="container">
         <div class="cta-panel reveal">
           <div class="cta-art" aria-hidden="true"><div class="aurora a1"></div><div class="aurora a2"></div><div class="hero-grid-lines"></div></div>
-          <p class="section-kicker"><span>07</span> Contact</p>
+          <p class="section-kicker"><span>08</span> Contact</p>
           <h2 class="cta-title">Have a product in mind?<br><em class="serif">Let's build it.</em></h2>
           <p class="cta-lead">I'm open to freelance projects and full-time roles. Tell me what you're building and I'll get back to you.</p>
           <div class="cta-actions">
@@ -653,10 +799,43 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p><span class="logo-mark sm">MJ</span> &copy; <span id="year">2026</span> Miftahul Jony · Rangpur, Bangladesh</p>
-      <a href="#top" class="arrow-link muted">Back to top <span aria-hidden="true">↑</span></a>
+  <footer class="site-footer">
+    <div class="aurora a1" aria-hidden="true"></div><div class="aurora a2" aria-hidden="true"></div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="nav-logo" aria-label="Miftahul Jony, back to top"><span class="coin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span><span class="logo-text">Miftahul Jony<small>DevOps · Systems</small></span></a>
+        <p>Principal DevOps &amp; Infrastructure Architect building reliable networks, systems and products from Rangpur, Bangladesh.</p>
+        <p class="eyebrow" style="margin:0"><span class="status-dot"></span> Available for new projects</p>
+      </div>
+      <nav class="foot-col" aria-label="Explore">
+        <h4>Explore</h4>
+        <ul><li><a href="#work">Work</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#systems">Systems</a></li><li><a href="#skills">Skills</a></li><li><a href="#about">About</a></li><li><a href="case-studies/bpda-smart-app.html">Case study</a></li></ul>
+      </nav>
+      <div class="foot-col">
+        <h4>Live products</h4>
+        <ul>
+          <li><a href="https://bpdatm.com" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA Telemedicine</a></li>
+          <li><a href="https://mrjorg.site" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>MJPay</a></li>
+          <li><a href="https://portal.bpda.site" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA Portal</a></li>
+          <li><a href="https://bpdafms.com" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA FMS</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Popular solutions</h4>
+        <ul><li><a href="#solutions">Payment gateway</a></li><li><a href="#solutions">Hospital management</a></li><li><a href="#solutions">School management</a></li><li><a href="#solutions">ISP billing</a></li><li><a href="#solutions">E-commerce &amp; POS</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul><li><a href="https://www.facebook.com/miftahuljony2" target="_blank" rel="noopener noreferrer">Facebook ↗</a></li><li><a href="https://github.com/miftahuljony3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="#contact">Start a project →</a></li></ul>
+      </div>
+    </div>
+    <span class="foot-word" aria-hidden="true">Miftahul Jony</span>
+    <div class="foot-bar">
+      <div class="container">
+        <p>&copy; <span id="year">2026</span> Miftahul Jony · Rangpur, Bangladesh</p>
+        <span class="edge"><span class="live-dot"></span> Served from Cloudflare's global edge</span>
+        <a href="#top" class="to-top" aria-label="Back to top">↑</a>
+      </div>
     </div>
   </footer>
 
