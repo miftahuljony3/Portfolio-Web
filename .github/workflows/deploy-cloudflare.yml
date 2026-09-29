@@ -1,0 +1,63 @@
+# Zero-downtime production deploy of mjony3.com to Cloudflare Workers.
+# Every push to main runs scripts/redeploy.sh: preflight → upload version →
+# canary → pinned smoke test → promote → verify, with automatic rollback.
+name: Deploy to Cloudflare (mjony3.com)
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+      - "case-studies/*.md"
+  workflow_dispatch:
+    inputs:
+      canary_percent:
+        description: "Share of traffic for the canary stage (1-99)"
+        required: false
+        default: "10"
+      soak_seconds:
+        description: "Seconds to hold the canary before promoting"
+        required: false
+        default: "20"
+
+permissions:
+  contents: read
+
+# Never run two production deploys at once; queue instead of cancelling.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Canary deploy + promote
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://mjony3.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Wrangler
+        run: npm install --global wrangler@4.86.0
+
+      - name: Deploy (zero downtime)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CANARY_PERCENT: ${{ github.event.inputs.canary_percent || '10' }}
+          CANARY_SOAK_SECONDS: ${{ github.event.inputs.soak_seconds || '20' }}
+          DEPLOY_MESSAGE: ${{ github.event.head_commit.message || 'manual deploy' }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is not set"
+            exit 1
+          fi
+          DEPLOY_MESSAGE="$(printf '%s' "$DEPLOY_MESSAGE" | head -n1)" scripts/redeploy.sh

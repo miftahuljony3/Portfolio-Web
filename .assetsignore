@@ -9,3 +9,4 @@ node_modules
 .wrangler
 case-studies/*.md
 js/worker.js
+scripts
