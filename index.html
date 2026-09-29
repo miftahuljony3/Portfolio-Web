@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miftahul Jony — Full-Stack Developer</title>
-  <meta name="description" content="Miftahul Jony is a full-stack developer from Rangpur, Bangladesh building fast, accessible web applications and practical AI tools.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Miftahul Jony — Principal DevOps &amp; Infrastructure Architect</title>
+  <meta name="description" content="Miftahul Jony is a Principal DevOps &amp; Infrastructure Architect and full-stack engineer from Rangpur, Bangladesh. Builder of the BPDA Telemedicine App, MJPay, BPDA Health Portal and BPDA FMS.">
   <meta name="author" content="Miftahul Jony">
   <link rel="canonical" href="https://mjony3.com/">
-  <meta name="theme-color" content="#0b0d12">
+  <meta name="theme-color" content="#07080c">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mjony3.com/">
-  <meta property="og:title" content="Miftahul Jony — Full-Stack Developer">
-  <meta property="og:description" content="Building fast, accessible web applications and practical AI tools.">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:title" content="Miftahul Jony — Principal DevOps &amp; Infrastructure Architect">
+  <meta property="og:description" content="Healthcare, SaaS and fintech products built end to end, from Rangpur, Bangladesh.">
+  <meta property="og:image" content="https://mjony3.com/assets/work/bpda-telemedicine.webp">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script>
-    // Apply saved theme before paint to avoid a flash
     try {
       var t = localStorage.getItem('theme');
       if (t) document.documentElement.setAttribute('data-theme', t);
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Miftahul Jony",
-    "jobTitle": "Full-Stack Developer",
+    "jobTitle": "Principal DevOps & Infrastructure Architect",
     "url": "https://mjony3.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Rangpur", "addressCountry": "BD" },
     "sameAs": ["https://github.com/miftahuljony3"]
@@ -43,17 +43,20 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
 
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#top" class="nav-logo" aria-label="Miftahul Jony, home">MJ<span class="accent">.</span></a>
+      <a href="#top" class="nav-logo" aria-label="Miftahul Jony, home">
+        <span class="logo-mark">MJ</span><span class="logo-text">Miftahul Jony</span>
+      </a>
       <nav aria-label="Primary">
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#principles" class="nav-link">Principles</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-only-mobile"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
@@ -61,6 +64,7 @@
           <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         </button>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's talk</a>
         <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
           <span class="hamburger"></span>
         </button>
@@ -69,254 +73,403 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
+    <!-- ================= Hero ================= -->
     <section class="hero" id="top">
-      <div class="container hero-grid">
+      <div class="hero-art" aria-hidden="true">
+        <div class="aurora a1"></div>
+        <div class="aurora a2"></div>
+        <div class="aurora a3"></div>
+        <div class="hero-grid-lines"></div>
+        <svg class="orbits" viewBox="0 0 800 800">
+          <defs>
+            <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8b7bff" stop-opacity=".8"/>
+              <stop offset="1" stop-color="#2dd4bf" stop-opacity=".08"/>
+            </linearGradient>
+          </defs>
+          <circle cx="400" cy="400" r="220" fill="none" stroke="url(#og)"/>
+          <circle cx="400" cy="400" r="310" fill="none" stroke="url(#og)" stroke-dasharray="2 7"/>
+          <circle cx="400" cy="400" r="390" fill="none" stroke="url(#og)" opacity=".6"/>
+          <g class="orbit-spin"><circle cx="620" cy="400" r="4" fill="#2dd4bf"/></g>
+          <g class="orbit-spin slow"><circle cx="400" cy="90" r="3" fill="#8b7bff"/></g>
+        </svg>
+      </div>
+
+      <div class="container hero-layout">
         <div class="hero-content">
-          <p class="eyebrow reveal"><span class="status-dot" aria-hidden="true"></span> Available for freelance &amp; full-time roles</p>
-          <h1 class="hero-name reveal">Miftahul Jony</h1>
-          <p class="hero-title reveal">Full-Stack Developer building <span class="accent">fast, reliable web products</span> and practical AI tools.</p>
+          <p class="eyebrow reveal"><span class="status-dot"></span> Available for new projects</p>
+          <p class="hero-role reveal"><b>Principal DevOps &amp; Infrastructure Architect</b> · Full-stack engineer</p>
+          <h1 class="hero-name reveal">
+            I design &amp; build <em class="serif">digital products</em> people rely on.
+          </h1>
           <p class="hero-description reveal">
-            I take ideas from requirements to production — clean interfaces, solid back-ends,
-            and deployments that just work. Based in Rangpur, Bangladesh, working with clients worldwide.
+            I'm <strong>Miftahul Jony</strong>. I architect and ship production systems built to survive
+            code review, real traffic and years of growth, including a telemedicine platform, a
+            mobile-money payment gateway, a healthcare portal and a finance SaaS.
           </p>
           <div class="hero-cta reveal">
-            <a href="#work" class="btn btn-primary">View my work</a>
-            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+            <a href="#work" class="btn btn-primary">See selected work <span aria-hidden="true">→</span></a>
+            <a href="#contact" class="btn btn-ghost">Start a project</a>
           </div>
-          <ul class="hero-social reveal" aria-label="Profiles">
-            <li><a href="https://github.com/miftahuljony3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
-            <li><a href="https://www.facebook.com/miftahuljony2" target="_blank" rel="noopener noreferrer">Facebook ↗</a></li>
-          </ul>
         </div>
 
-        <div class="hero-card reveal" aria-hidden="true">
-          <div class="code-window">
-            <div class="code-bar"><span></span><span></span><span></span><em>developer.js</em></div>
-<pre class="code"><code><span class="k">const</span> <span class="v">developer</span> = {
-  name: <span class="s">'Miftahul Jony'</span>,
-  role: <span class="s">'Full-Stack Developer'</span>,
-  based: <span class="s">'Rangpur, BD'</span>,
-  stack: [<span class="s">'React'</span>, <span class="s">'Next.js'</span>,
-          <span class="s">'Node.js'</span>, <span class="s">'Python'</span>],
-  shipped: [<span class="s">'BPDA Health Portal'</span>,
-            <span class="s">'BPDA Telemedicine'</span>,
-            <span class="s">'BPDA FMS'</span>, <span class="s">'MJPay'</span>],
-  <span class="f">available</span>: () =&gt; <span class="k">true</span>,
-};</code></pre>
+        <div class="hero-stage reveal" aria-hidden="true">
+          <figure class="float-frame f1" data-depth="14">
+            <div class="frame-bar"><span></span><span></span><span></span><em>portal.bpda.site</em></div>
+            <img src="assets/work/bpda-portal-sm.webp" alt="" width="720" height="450">
+          </figure>
+          <figure class="float-frame f2" data-depth="28">
+            <div class="frame-bar"><span></span><span></span><span></span><em>mrjorg.site</em></div>
+            <img src="assets/work/mjpay-sm.webp" alt="" width="720" height="450">
+          </figure>
+          <figure class="float-frame f3" data-depth="44">
+            <div class="frame-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
+            <img src="assets/work/bpda-telemedicine-sm.webp" alt="" width="720" height="450">
+          </figure>
+          <div class="float-chip c-a" data-depth="60"><span class="chip-dot ok"></span> Payment matched in ~8s</div>
+          <div class="float-chip c-b" data-depth="36"><span class="chip-rx">℞</span> e-Prescription printed</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="stats reveal">
+          <div><dt>Live products</dt><dd>4</dd></div>
+          <div><dt>Telemedicine centres on BPDA</dt><dd>58</dd></div>
+          <div><dt>Payment confirmed</dt><dd>~8s</dd></div>
+          <div><dt>Languages shipped</dt><dd>বাংলা · EN</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>Python</span><i>✦</i><span>Video calling</span><i>✦</i><span>Payments API</span><i>✦</i><span>Webhooks</span><i>✦</i><span>SQL</span><i>✦</i><span>AI assistants</span><i>✦</i><span>Android</span><i>✦</i><span>Cloudflare</span><i>✦</i>
+        <span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>Python</span><i>✦</i><span>Video calling</span><i>✦</i><span>Payments API</span><i>✦</i><span>Webhooks</span><i>✦</i><span>SQL</span><i>✦</i><span>AI assistants</span><i>✦</i><span>Android</span><i>✦</i><span>Cloudflare</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ================= Work ================= -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker"><span>01</span> Selected work</p>
+          <h2 class="section-title">Products in <em class="serif">production</em>, not just prototypes.</h2>
+        </header>
+
+        <!-- Flagship: BPDA Telemedicine -->
+        <article class="flagship reveal" style="--tint:#14b8a6;--tint2:#22c55e">
+          <div class="flagship-glow" aria-hidden="true"></div>
+          <div class="showcase">
+            <a class="showcase-media" href="https://bpdatm.com" target="_blank" rel="noopener noreferrer" aria-label="Open BPDA Telemedicine App">
+              <div class="browser">
+                <div class="frame-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
+                <img src="assets/work/bpda-telemedicine.webp" alt="BPDA Telemedicine App home page: a doctor at every BPDA centre, by video, with an e-prescription in hand" width="1440" height="900" loading="lazy">
+              </div>
+            </a>
+            <div class="showcase-info">
+              <p class="project-meta"><span class="badge">Flagship</span> Healthcare · Telemedicine</p>
+              <h3 class="project-title">BPDA Telemedicine App</h3>
+              <p class="project-tagline">A doctor at every BPDA centre, by video, with an e-prescription in hand.</p>
+              <p class="project-description">
+                Centre facilitators connect rural patients with qualified doctors in real time, write
+                the prescription together and print it on the spot. Specialist care reaches the village
+                without anyone travelling to the city.
+              </p>
+              <ul class="chips"><li>React</li><li>Vite</li><li>WebRTC video</li><li>AI assistant</li><li>Android</li><li>Bangla / EN</li></ul>
+              <div class="link-row">
+                <a href="https://bpdatm.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Visit bpdatm.com <span aria-hidden="true">↗</span></a>
+                <a href="case-studies/bpda-smart-app.html" class="btn btn-ghost btn-sm">Case study <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
           </div>
+
+          <div class="flow-block">
+            <p class="flow-title">How a consultation works <span>patient in → prescription in hand, usually &lt; 20 min</span></p>
+            <ol class="flow">
+              <li><span class="flow-time">Step 1</span><h4>Patient arrives</h4><p>The facilitator registers the patient or opens their existing record.</p></li>
+              <li><span class="flow-time">Step 2</span><h4>Prescription opened</h4><p>Chief complaint, vitals and history are entered at the centre.</p></li>
+              <li><span class="flow-time">Step 3</span><h4>One-tap video call</h4><p>The assigned doctor is rung, and the call escalates to an admin if they are busy.</p></li>
+              <li><span class="flow-time">Step 4</span><h4>Doctor prescribes</h4><p>The doctor examines, writes the prescription live and marks it reviewed.</p></li>
+              <li><span class="flow-time">Step 5</span><h4>Print &amp; go</h4><p>A signed e-prescription is in hand, usually within 20 minutes.</p></li>
+            </ol>
+          </div>
+
+          <div class="feat-block">
+            <p class="flow-title">Every feature <span>12 capabilities, all live today</span></p>
+            <ul class="feat-grid">
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg></span><div><h4>Live video consultation</h4><p>One tap from the centre rings the doctor, who sees and examines the patient on screen, with no travel to the city.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h7a4 4 0 0 1 0 8H6zM6 12v8M11 12l7 8M18 12l-5 8"/></svg></span><div><h4>Collaborative e-prescription</h4><p>The doctor writes the diagnosis, medicines and advice live during the call, and it prints before the patient leaves.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div><h4>BPDA AI assistant</h4><p>Built-in chat that knows each user's role: app help, medicine lookup from the approved list, general guidance.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><div><h4>24/7 live doctor status</h4><p>Each centre sees its assigned doctor online in real time. Busy or offline calls escalate to an administrator.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 11h6M9 15h4"/></svg></span><div><h4>Centre management</h4><p>Patient registration, visit history, prescription records and monthly reports in one place.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><h4>Android app for the field</h4><p>Facilitators run the entire flow from a phone on ordinary mobile data.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Safe prescribing</h4><p>Doctors prescribe from an admin-approved medicine list, and facilitators cannot alter a doctor's prescription.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><div><h4>Smart templates</h4><p>General and dental templates with dose presets, BMDC number and centre details in the header.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg></span><div><h4>Follow-up built in</h4><p>Follow-up date, referrals and investigations. The next visit opens with the full history.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg></span><div><h4>Bilingual A4 print</h4><p>Prescriptions print in Bangla and English with the doctor's name and signature block.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><h4>Specialists &amp; foreign doctors</h4><p>Book a specialist on portal.bpda.site, pay there, and that doctor is pre-selected for the next call.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.6 4 2.8 4 6"/></svg></span><div><h4>Role-based access</h4><p>Separate facilitator, doctor and administrator workflows, including approvals, doctor assignment and escalations.</p></div></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Flagship: MJPay -->
+        <article class="flagship reveal" style="--tint:#3b82f6;--tint2:#22c55e">
+          <div class="flagship-glow" aria-hidden="true"></div>
+          <div class="showcase showcase-flip">
+            <a class="showcase-media" href="https://mrjorg.site" target="_blank" rel="noopener noreferrer" aria-label="Open MJPay">
+              <div class="browser">
+                <div class="frame-bar"><span></span><span></span><span></span><em>mrjorg.site</em></div>
+                <img src="assets/work/mjpay.webp" alt="MJPay home page: get paid on mobile money, confirmed automatically" width="1440" height="900" loading="lazy">
+              </div>
+            </a>
+            <div class="showcase-info">
+              <p class="project-meta"><span class="badge">Flagship</span> Fintech · Payments</p>
+              <h3 class="project-title">MJPay</h3>
+              <p class="project-tagline">Get paid on mobile money, confirmed automatically.</p>
+              <p class="project-description">
+                Turns a bKash or Nagad "send money" into a real payment gateway: hosted checkout, receipt
+                matching from the operator's SMS, and a signed webhook to your system, usually within
+                seconds. Payouts go back out through the same API.
+              </p>
+              <ul class="wallets" aria-label="Supported rails"><li>bKash</li><li>Nagad</li><li>Rocket</li><li>Upay</li><li>Bank transfer</li></ul>
+              <ul class="chips"><li>Payments API</li><li>HMAC webhooks</li><li>USSD automation</li><li>Risk scoring</li><li>2FA</li></ul>
+              <div class="link-row">
+                <a href="https://mrjorg.site" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Visit MJPay <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-block">
+            <p class="flow-title">Between "Pay" and "Paid" <span>one payment, start to finish, in about 8 seconds</span></p>
+            <ol class="flow flow-6">
+              <li><span class="flow-time">0.0s</span><h4>Customer taps Pay</h4><p>The hosted checkout opens on their phone.</p></li>
+              <li><span class="flow-time">0.4s</span><h4>Number allocated</h4><p>One of your wallet numbers is assigned to this payment alone.</p></li>
+              <li><span class="flow-time">~6s</span><h4>Money sent</h4><p>The customer pays in their own bKash or Nagad app.</p></li>
+              <li><span class="flow-time">~7s</span><h4>Receipt SMS arrives</h4><p>It is forwarded, signed and stored raw before parsing.</p></li>
+              <li><span class="flow-time">~8s</span><h4>Matched &amp; paid</h4><p>Amount, number and TrxID match exactly one open payment.</p></li>
+              <li><span class="flow-time">~8s</span><h4>Webhook fires</h4><p>A signed <code>payment.success</code> event reaches your server.</p></li>
+            </ol>
+          </div>
+
+          <div class="feat-block">
+            <p class="flow-title">Every feature <span>16 capabilities, all live today</span></p>
+            <ul class="feat-grid">
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></span><div><h4>Hosted checkout</h4><p>A phone-first payment page: pick a wallet, get a number, pay from the wallet app. Nothing to build.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><div><h4>Automatic confirmation</h4><p>The operator's receipt SMS is matched by amount, number and TrxID within seconds, with no manual approval.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg></span><div><h4>One API, both directions</h4><p>The same four wallets take payments and send them, money in and out on one key.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><div><h4>Payouts in seconds</h4><p><code>POST /v1/payouts</code> and an agent phone dials USSD itself. Live runs have completed in 12 and 15 seconds.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><div><h4>Payment links</h4><p>No website or developer needed. Share a link on Facebook, WhatsApp or SMS.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></span><div><h4>QR payments</h4><p>Every link carries a QR code for counters, posters or invoices, with no terminal required.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 16l10-10 3 3-10 10H6z"/></svg></span><div><h4>Signed webhooks</h4><p>HMAC-signed events, retried with backoff, with every delivery attempt visible in the portal.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg></span><div><h4>Instant SMS notifications</h4><p>Account events such as go-live, reviews, paused webhooks and new teammates reach you by SMS.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.01"/></svg></span><div><h4>Risk-scored payouts</h4><p>Large amounts, new payees, bursts and repeat numbers are scored, and high-risk payouts wait for a person.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M4 4l16 16"/></svg></span><div><h4>No card data, no PCI scope</h4><p>No card rails means no card numbers ever enter the system, so there is nothing to leak.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h13v4"/><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 14h2"/></svg></span><div><h4>Your money stays yours</h4><p>Paid straight into your own wallet numbers. No float held and no settlement cycle.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><div><h4>Merchant portal</h4><p>Payments, checkouts, links, API keys, webhook logs and team roles, built mobile-first.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><div><h4>2FA &amp; audit trail</h4><p>Two-factor sign-in, IP-locked revocable API keys and an append-only log of staff actions.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/></svg></span><div><h4>Public status page</h4><p>A status page anyone can read, plus a health endpoint your own monitoring can poll.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 20h16L14 9V3"/><path d="M7 15h10"/></svg></span><div><h4>Sandbox from day one</h4><p>Test the whole integration, payouts included, before approval, then swap one key for live.</p></div></li>
+              <li class="feat spot"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><div><h4>Human onboarding</h4><p>Invite-only and checked by a person, with minimal paperwork.</p></div></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- More products -->
+        <div class="duo">
+          <article class="card-product reveal spot" style="--tint:#22c55e">
+            <a class="card-media" href="https://portal.bpda.site" target="_blank" rel="noopener noreferrer" aria-label="Open BPDA Health Portal">
+              <div class="browser">
+                <div class="frame-bar"><span></span><span></span><span></span><em>portal.bpda.site</em></div>
+                <img src="assets/work/bpda-portal.webp" alt="BPDA Health Portal: find verified doctors, hospitals and health workers" width="1440" height="900" loading="lazy">
+              </div>
+            </a>
+            <p class="project-meta">Healthcare · Platform</p>
+            <h3 class="project-title">BPDA Health Portal</h3>
+            <p class="project-description">
+              One platform for healthcare and health education in Bangladesh, with a verified directory of
+              doctors, hospitals, ambulances, nurses and training centres. It is bilingual and links to
+              the telemedicine network and paid specialist bookings.
+            </p>
+            <ul class="chips"><li>Directory</li><li>Auth &amp; roles</li><li>Bookings</li><li>i18n</li></ul>
+            <a href="https://portal.bpda.site" class="arrow-link" target="_blank" rel="noopener noreferrer">portal.bpda.site <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="card-product reveal spot" style="--tint:#eab308">
+            <a class="card-media" href="https://bpdafms.com" target="_blank" rel="noopener noreferrer" aria-label="Open BPDA FMS">
+              <div class="browser">
+                <div class="frame-bar"><span></span><span></span><span></span><em>bpdafms.com</em></div>
+                <img src="assets/work/bpda-fms.webp" alt="BPDA FMS: keep accounts simple, with a dashboard preview" width="1440" height="900" loading="lazy">
+              </div>
+            </a>
+            <p class="project-meta">SaaS · Finance</p>
+            <h3 class="project-title">BPDA FMS</h3>
+            <p class="project-description">
+              A finance-management SaaS for Bangladesh covering personal expenses, shop dues, inventory and
+              healthcare operations. It includes transactions, a due ledger and reports, on mobile and
+              desktop, with a 15-day free trial.
+            </p>
+            <ul class="chips"><li>Next.js</li><li>Dashboards</li><li>Subscriptions</li><li>Bangla / EN</li></ul>
+            <a href="https://bpdafms.com" class="arrow-link" target="_blank" rel="noopener noreferrer">bpdafms.com <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+
+        <div class="mini-grid">
+          <article class="mini-card reveal spot">
+            <div class="mini-art art-agent" aria-hidden="true">
+<pre>$ python main.py chat
+<span class="t-dim">agent ›</span> memory loaded (sqlite)
+<span class="t-ok">you   ›</span> summarise my notes
+<span class="t-dim">agent ›</span> <span class="caret">▍</span></pre>
+            </div>
+            <div>
+              <p class="project-meta">Open source · AI</p>
+              <h3>Personal AI Agent</h3>
+              <p>A locally-hostable, self-trainable agent in Python: an LLM tool-calling loop, SQLite memory, and exports of conversations as fine-tuning data.</p>
+              <a href="https://github.com/miftahuljony3/Copilot_Agent" class="arrow-link" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="mini-card reveal spot">
+            <div class="mini-art art-site" aria-hidden="true"><span class="logo-mark big">MJ</span></div>
+            <div>
+              <p class="project-meta">Open source · Web</p>
+              <h3>This portfolio</h3>
+              <p>A dependency-free static site with generative artwork and light and dark themes, served from Cloudflare's edge.</p>
+              <a href="https://github.com/miftahuljony3/Portfolio-Web" class="arrow-link" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about">
+    <!-- ================= About ================= -->
+    <section class="section section-alt" id="about">
       <div class="container about-grid">
-        <div>
-          <p class="section-kicker">01 — About</p>
-          <h2 class="section-title">Clean code, clear interfaces, shipped on time.</h2>
-        </div>
-        <div class="about-body">
-          <p>
-            I'm a full-stack developer who enjoys the whole journey of a product: understanding
-            what a business actually needs, designing an interface people can use without thinking,
-            and building the back-end that keeps it running.
+        <header class="section-head">
+          <p class="section-kicker"><span>02</span> About</p>
+          <h2 class="section-title">Clean code, clear interfaces, <em class="serif">shipped.</em></h2>
+        </header>
+        <div class="about-body reveal">
+          <p class="about-lead">
+            I work as a principal-level engineer and architect. Success isn't measured by how much code
+            gets written. It's measured by the most effective, reliable and well-reasoned answer to the real business objective.
           </p>
           <p>
-            I've shipped several production platforms used in Bangladesh — a healthcare directory
-            portal, a telemedicine app with video consultations, a finance-management SaaS and an
-            automated mobile-money payment gateway — plus open-source AI tooling in Python. I care about performance, accessibility and code
-            that the next developer will thank me for.
+            Most of my work serves real users in Bangladesh: patients reaching a doctor from their upazila,
+            merchants taking mobile-money payments, shop owners keeping their accounts. That means designing
+            for ordinary mobile data and for two languages, and building systems that have to be right the first time.
           </p>
           <dl class="facts">
-            <div><dt>Location</dt><dd>Rangpur, Bangladesh</dd></div>
-            <div><dt>Focus</dt><dd>SaaS, healthcare &amp; fintech</dd></div>
-            <div><dt>Shipped</dt><dd>4 live production products</dd></div>
-            <div><dt>Status</dt><dd>Open to opportunities</dd></div>
+            <div><dt>Based in</dt><dd>Rangpur, Bangladesh</dd></div>
+            <div><dt>Role</dt><dd>DevOps &amp; infrastructure architect</dd></div>
+            <div><dt>Domains</dt><dd>Healthcare, SaaS &amp; fintech</dd></div>
+            <div><dt>Status</dt><dd><span class="chip-dot ok"></span> Open to opportunities</dd></div>
           </dl>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section section-alt" id="skills">
+    <!-- ================= Principles ================= -->
+    <section class="section" id="principles">
       <div class="container">
-        <p class="section-kicker">02 — Skills</p>
-        <h2 class="section-title">Tools I use to get things done.</h2>
-        <div class="skills-grid">
-          <article class="skill-card reveal">
-            <h3>Front-End</h3>
-            <p>Responsive, accessible interfaces that load fast on any device.</p>
-            <ul class="chips">
-              <li>HTML5</li><li>CSS3 / Sass</li><li>JavaScript (ES6+)</li><li>React</li><li>Next.js</li><li>Vite</li><li>Responsive design</li>
-            </ul>
-          </article>
-          <article class="skill-card reveal">
-            <h3>Back-End</h3>
-            <p>APIs, auth, payments and data layers that are simple to reason about and easy to scale.</p>
-            <ul class="chips">
-              <li>Node.js</li><li>Express</li><li>Python</li><li>REST APIs</li><li>SQL / NoSQL</li><li>Payments</li>
-            </ul>
-          </article>
-          <article class="skill-card reveal">
-            <h3>AI &amp; Automation</h3>
-            <p>Practical LLM tooling — agents, tool calling, memory and data pipelines.</p>
-            <ul class="chips">
-              <li>LLM agents</li><li>Tool calling</li><li>SQLite memory</li><li>Fine-tune datasets</li><li>Cloudflare AI</li>
-            </ul>
-          </article>
-          <article class="skill-card reveal">
-            <h3>Tooling &amp; Delivery</h3>
-            <p>Version control, automation and reliable deployments.</p>
-            <ul class="chips">
-              <li>Git / GitHub</li><li>GitHub Actions</li><li>Docker</li><li>CI/CD</li><li>Agile / Scrum</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section class="section" id="work">
-      <div class="container">
-        <p class="section-kicker">03 — Selected work</p>
-        <h2 class="section-title">Projects I've built.</h2>
-
-        <article class="project project-featured reveal">
-          <div class="project-visual visual-bpda" aria-hidden="true">
-              <div class="mock ">
-                <div class="mock-bar"><span></span><span></span><span></span><em>portal.bpda.site</em></div>
-                <div class="mock-body"><div class="mock-hero"></div><div class="mock-row"><i></i><i></i><i></i></div><div class="mock-lines"><b></b><b class="short"></b></div></div>
-              </div>
-            </div>
-          <div class="project-info">
-            <p class="project-meta">Featured · Production · Healthcare</p>
-            <h3 class="project-title">BPDA Health Portal</h3>
-            <p class="project-description">
-              One platform for healthcare and health education in Bangladesh. It connects students,
-              training institutes, doctors and health facilities, with a verified public directory
-              and a route to video consultations at local telemedicine centres.
-            </p>
-            <ul class="project-points">
-              <li>Searchable directory of doctors, hospitals, ambulances, nurses and training centres</li>
-              <li>Every listing reviewed by BPDA before going public; registration and sign-in</li>
-              <li>Fully bilingual — Bangla and English</li>
-            </ul>
-            <ul class="chips chips-sm"><li>Full-stack</li><li>Auth &amp; roles</li><li>Bilingual (i18n)</li><li>Healthcare</li></ul>
-            <div class="project-links">
-              <a href="https://portal.bpda.site" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <div class="projects-grid">
-          <article class="project reveal">
-            <div class="project-visual visual-bpda" aria-hidden="true">
-              <div class="mock ">
-                <div class="mock-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
-                <div class="mock-body"><div class="mock-hero"></div><div class="mock-row"><i></i><i></i><i></i></div><div class="mock-lines"><b></b><b class="short"></b></div></div>
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-meta">Production · Healthcare</p>
-              <h3 class="project-title">BPDA Telemedicine App</h3>
-              <p class="project-description">A telemedicine web app that lets patients talk to a doctor by video from a BPDA centre in their upazila. Built as a fast single-page app with in-browser video calling.</p>
-              <ul class="chips chips-sm"><li>React</li><li>Vite</li><li>Video calling</li><li>Responsive</li></ul>
-              <div class="project-links"><a href="https://bpdatm.com" class="text-link" target="_blank" rel="noopener noreferrer">bpdatm.com ↗</a>
-                <a href="case-studies/bpda-smart-app.html" class="text-link">Case study →</a></div>
-            </div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual visual-fms" aria-hidden="true">
-              <div class="mock ">
-                <div class="mock-bar"><span></span><span></span><span></span><em>app.bpdafms.com</em></div>
-                <div class="mock-body"><div class="mock-hero"></div><div class="mock-row"><i></i><i></i><i></i></div><div class="mock-lines"><b></b><b class="short"></b></div></div>
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-meta">Production · SaaS · Fintech</p>
-              <h3 class="project-title">BPDA FMS</h3>
-              <p class="project-description">A finance management SaaS built for Bangladesh — personal expenses, shop dues and inventory, or healthcare operations, all from one simple dashboard with a free trial and paid plans.</p>
-              <ul class="chips chips-sm"><li>Next.js</li><li>React</li><li>Dashboards</li><li>Bangla / English</li></ul>
-              <div class="project-links"><a href="https://bpdafms.com" class="text-link" target="_blank" rel="noopener noreferrer">bpdafms.com ↗</a></div>
-            </div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual visual-pay" aria-hidden="true">
-<pre class="term"><span class="t-dim">deposit ›</span> bKash   ৳ 2,500
-<span class="t-ok">verified ›</span> 1.8s
-<span class="t-dim">payout  ›</span> Nagad   ৳ 1,200
-<span class="t-ok">sent     ›</span> ✓</pre>
-            </div>
-            <div class="project-info">
-              <p class="project-meta">Production · Payments</p>
-              <h3 class="project-title">MJPay</h3>
-              <p class="project-description">Automatic mobile-money payments for Bangladesh. Deposits across bKash, Nagad, Rocket and Upay are confirmed and payouts sent in seconds.</p>
-              <ul class="chips chips-sm"><li>Payments</li><li>Mobile money</li><li>Automation</li><li>Security</li></ul>
-              <div class="project-links"><a href="https://mrjorg.site" class="text-link" target="_blank" rel="noopener noreferrer">mrjorg.site ↗</a></div>
-            </div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual visual-agent" aria-hidden="true">
-<pre class="term">$ python main.py chat
-<span class="t-dim">agent ›</span> memory loaded (sqlite)
-<span class="t-ok">you   ›</span> summarise my notes
-<span class="t-dim">agent ›</span> ▍</pre>
-            </div>
-            <div class="project-info">
-              <p class="project-meta">Open source · Python · AI</p>
-              <h3 class="project-title">Personal AI Agent</h3>
-              <p class="project-description">A locally-hostable, self-trainable AI agent. It runs an LLM tool-calling loop, keeps short- and long-term memory in SQLite, and exports conversations as fine-tuning datasets.</p>
-              <ul class="chips chips-sm"><li>Python</li><li>LLMs</li><li>SQLite</li><li>Click CLI</li></ul>
-              <div class="project-links"><a href="https://github.com/miftahuljony3/Copilot_Agent" class="text-link" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-            </div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual visual-portfolio" aria-hidden="true"><span class="big-mark">MJ<span class="accent">.</span></span></div>
-            <div class="project-info">
-              <p class="project-meta">Open source · Web</p>
-              <h3 class="project-title">This Portfolio</h3>
-              <p class="project-description">A dependency-free, accessible static site with light/dark themes, deployed automatically by GitHub Actions on every push.</p>
-              <ul class="chips chips-sm"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Actions</li></ul>
-              <div class="project-links"><a href="https://github.com/miftahuljony3/Portfolio-Web" class="text-link" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section section-alt" id="process">
-      <div class="container">
-        <p class="section-kicker">04 — Process</p>
-        <h2 class="section-title">How I work with you.</h2>
-        <ol class="process-grid">
-          <li class="reveal"><span class="step">01</span><h3>Discover</h3><p>Clarify goals, users and scope so we build the right thing first.</p></li>
-          <li class="reveal"><span class="step">02</span><h3>Design</h3><p>Plan structure and interface, and agree on it before code is written.</p></li>
-          <li class="reveal"><span class="step">03</span><h3>Build</h3><p>Ship in small, reviewable increments with regular progress updates.</p></li>
-          <li class="reveal"><span class="step">04</span><h3>Launch &amp; support</h3><p>Test across devices, deploy, verify live, and stay on hand afterwards.</p></li>
+        <header class="section-head">
+          <p class="section-kicker"><span>03</span> Engineering principles</p>
+          <h2 class="section-title">Built to <em class="serif">withstand</em> production.</h2>
+        </header>
+        <ol class="principles">
+          <li class="principle reveal"><span class="principle-num">01</span><h3>Understand before acting</h3><p>Read the whole problem, pull out the explicit and implicit requirements, and gather context before touching code. No assumptions left unexamined.</p></li>
+          <li class="principle reveal"><span class="principle-num">02</span><h3>Weigh trade-offs first</h3><p>Break complex work into components and compare approaches before building. Choose the design that holds up, not the one that's quickest to type.</p></li>
+          <li class="principle reveal"><span class="principle-num">03</span><h3>Design for failure</h3><p>Anticipate failure modes and operational load: retries with backoff, idempotency, escalation paths, public status and health checks.</p></li>
+          <li class="principle reveal"><span class="principle-num">04</span><h3>Reuse over duplication</h3><p>Prefer shared abstractions and clear boundaries, so systems stay maintainable as teams and features grow.</p></li>
+          <li class="principle reveal"><span class="principle-num">05</span><h3>Secure by default</h3><p>Signed webhooks, two-factor auth, IP-locked keys, role-based access and append-only audit trails. Least privilege everywhere.</p></li>
+          <li class="principle reveal"><span class="principle-num">06</span><h3>Verify, don't assume</h3><p>Run it, test it and check it live. Report outcomes honestly, then make the small adjacent improvements that clearly add value.</p></li>
         </ol>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ================= Skills ================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker"><span>04</span> Capabilities</p>
+          <h2 class="section-title">The toolkit behind the <em class="serif">products.</em></h2>
+        </header>
+        <div class="bento">
+          <article class="bento-card b-wide reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div>
+            <h3>DevOps &amp; infrastructure</h3>
+            <p>CI/CD pipelines, edge deployments and infrastructure designed for reliability and easy rollbacks, so launches are uneventful.</p>
+            <ul class="chips"><li>CI/CD</li><li>GitHub Actions</li><li>Cloudflare Workers</li><li>DNS &amp; TLS</li><li>Docker</li><li>Git</li></ul>
+          </article>
+          <article class="bento-card reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Reliability &amp; security</h3>
+            <p>Observability, retries, idempotency, HMAC signing, 2FA and audit logging.</p>
+            <ul class="chips"><li>Health checks</li><li>Status pages</li><li>Audit trails</li></ul>
+          </article>
+          <article class="bento-card b-wide reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg></div>
+            <h3>Front-end engineering</h3>
+            <p>Fast, responsive and accessible interfaces, from marketing sites to real-time dashboards.</p>
+            <ul class="chips"><li>React</li><li>Next.js</li><li>Vite</li><li>JavaScript (ES6+)</li><li>CSS / Sass</li><li>Responsive design</li></ul>
+          </article>
+          <article class="bento-card reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></div>
+            <h3>Back-end &amp; data</h3>
+            <p>APIs, auth, roles and data models that are easy to reason about.</p>
+            <ul class="chips"><li>Node.js</li><li>Express</li><li>Python</li><li>SQL / NoSQL</li></ul>
+          </article>
+          <article class="bento-card reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+            <h3>Payments &amp; fintech</h3>
+            <p>Mobile-money collection and payouts, receipt matching, signed webhooks and risk checks.</p>
+            <ul class="chips"><li>bKash / Nagad</li><li>Webhooks</li><li>Payouts</li></ul>
+          </article>
+          <article class="bento-card reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 10l5-3v10l-5-3z"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg></div>
+            <h3>Real-time &amp; health tech</h3>
+            <p>In-browser video consultations, live presence, escalations and e-prescriptions.</p>
+            <ul class="chips"><li>Video calling</li><li>Live status</li><li>Android</li></ul>
+          </article>
+          <article class="bento-card reveal spot">
+            <div class="bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+            <h3>AI &amp; automation</h3>
+            <p>Role-aware in-app assistants, LLM agents, tool calling and memory.</p>
+            <ul class="chips"><li>LLM agents</li><li>Tool calling</li><li>Cloudflare AI</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Process ================= -->
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-kicker"><span>05</span> Process</p>
+          <h2 class="section-title">How we'll <em class="serif">work together.</em></h2>
+        </header>
+        <ol class="process">
+          <li class="reveal"><span class="step">01</span><h3>Discover</h3><p>Clarify goals, users and scope so we build the right thing first.</p></li>
+          <li class="reveal"><span class="step">02</span><h3>Design</h3><p>Plan structure and interface, and agree on it before code is written.</p></li>
+          <li class="reveal"><span class="step">03</span><h3>Build</h3><p>Ship in small, reviewable increments with regular progress updates.</p></li>
+          <li class="reveal"><span class="step">04</span><h3>Launch &amp; support</h3><p>Test across devices, deploy, verify it live, and stay on hand afterwards.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
     <section class="section" id="contact">
-      <div class="container contact-wrap">
-        <p class="section-kicker">05 — Contact</p>
-        <h2 class="section-title">Have a project in mind?</h2>
-        <p class="contact-lead">
-          I'm open to freelance projects and full-time roles. Tell me a little about what
-          you're building and I'll get back to you.
-        </p>
-        <div class="contact-actions">
-          <a href="https://github.com/miftahuljony3" class="contact-card" target="_blank" rel="noopener noreferrer">
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">@miftahuljony3 ↗</span>
-          </a>
-          <a href="https://www.facebook.com/miftahuljony2" class="contact-card" target="_blank" rel="noopener noreferrer">
-            <span class="contact-label">Facebook</span>
-            <span class="contact-value">Send a message ↗</span>
-          </a>
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="cta-art" aria-hidden="true"><div class="aurora a1"></div><div class="aurora a2"></div><div class="hero-grid-lines"></div></div>
+          <p class="section-kicker"><span>06</span> Contact</p>
+          <h2 class="cta-title">Have a product in mind?<br><em class="serif">Let's build it.</em></h2>
+          <p class="cta-lead">I'm open to freelance projects and full-time roles. Tell me what you're building and I'll get back to you.</p>
+          <div class="cta-actions">
+            <a href="https://www.facebook.com/miftahuljony2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Message me on Facebook <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/miftahuljony3" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">GitHub @miftahuljony3 <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -324,8 +477,8 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> Miftahul Jony</p>
-      <a href="#top" class="text-link">Back to top ↑</a>
+      <p><span class="logo-mark sm">MJ</span> &copy; <span id="year">2026</span> Miftahul Jony · Rangpur, Bangladesh</p>
+      <a href="#top" class="arrow-link muted">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </footer>
 

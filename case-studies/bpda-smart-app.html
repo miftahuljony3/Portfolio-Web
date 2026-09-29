@@ -11,15 +11,17 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#07080c">
   <link rel="stylesheet" href="../css/style.css">
   <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="../" class="nav-logo" aria-label="Miftahul Jony, home">MJ<span class="accent">.</span></a>
+      <a href="../" class="nav-logo" aria-label="Miftahul Jony, home"><span class="logo-mark">MJ</span><span class="logo-text">Miftahul Jony</span></a>
       <div class="nav-actions">
         <a href="../#contact" class="btn btn-primary btn-sm">Work with me</a>
         <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">
@@ -30,11 +32,12 @@
     </div>
   </header>
 
-  <main id="main" class="page">
+  <main id="main" class="page" style="isolation:isolate;overflow:hidden">
+    <div class="hero-art" aria-hidden="true"><div class="aurora a1"></div><div class="aurora a2"></div><div class="hero-grid-lines"></div></div>
     <article class="container prose">
-      <a href="../#work" class="text-link back">← Back to work</a>
-      <p class="section-kicker">Case study · Healthcare</p>
-      <h1>BPDA Telemedicine App</h1>
+      <a href="../#work" class="arrow-link muted back">← Back to work</a>
+      <p class="section-kicker"><span>Case study</span> Healthcare · Telemedicine</p>
+      <h1>BPDA Telemedicine <em class="serif">App</em></h1>
       <p class="lead">
         A production web platform that gives BPDA a modern, trustworthy online presence and
         lets users reach services quickly on any device.
@@ -45,6 +48,10 @@
         <div><dt>Stack</dt><dd>HTML5 · CSS3 · JavaScript</dd></div>
         <div><dt>Status</dt><dd>Live in production</dd></div>
       </dl>
+      <div class="browser">
+        <div class="frame-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
+        <img src="../assets/work/bpda-telemedicine.webp" alt="BPDA Telemedicine App home page" width="1440" height="900">
+      </div>
       <p style="margin-top:20px"><a href="https://bpdatm.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Visit bpdatm.com ↗</a></p>
 
       <h2>My role</h2>
@@ -110,7 +117,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year">2026</span> Miftahul Jony</p>
-      <a href="../" class="text-link">mjony3.com</a>
+      <a href="../" class="arrow-link muted">mjony3.com</a>
     </div>
   </footer>
   <script src="../js/script.js"></script>

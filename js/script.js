@@ -9,7 +9,8 @@ const themeToggle = document.getElementById('theme-toggle');
 function currentTheme() {
   const explicit = root.getAttribute('data-theme');
   if (explicit) return explicit;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Site is dark-first: only an explicit light OS preference yields light
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
 if (themeToggle) {
@@ -42,7 +43,7 @@ if (navToggle && navMenu) {
 // Navbar border on scroll
 // ===========================
 const navbar = document.getElementById('navbar');
-const onScroll = () => navbar && navbar.classList.toggle('scrolled', window.scrollY > 8);
+const onScroll = () => navbar && navbar.classList.toggle('scrolled', window.scrollY > 16);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
@@ -88,3 +89,39 @@ if ('IntersectionObserver' in window) {
 // ===========================
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+// ===========================
+// Pointer effects (skipped for touch & reduced motion)
+// ===========================
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (finePointer && !reducedMotion) {
+  // Cursor-following spotlight on cards
+  document.addEventListener('pointermove', e => {
+    const card = e.target.closest && e.target.closest('.spot');
+    if (!card) return;
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+
+  // Hero parallax on floating frames
+  const stage = document.querySelector('.hero-stage');
+  const layers = stage ? stage.querySelectorAll('[data-depth]') : [];
+  let raf = 0;
+  if (stage && layers.length) {
+    document.querySelector('.hero').addEventListener('pointermove', e => {
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        layers.forEach(el => {
+          const d = Number(el.dataset.depth) || 0;
+          el.style.setProperty('--px', (-x * d).toFixed(1) + 'px');
+          el.style.setProperty('--py', (-y * d).toFixed(1) + 'px');
+        });
+      });
+    }, { passive: true });
+  }
+}

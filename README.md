@@ -8,10 +8,11 @@ layout, accessible navigation and SEO metadata.
 ## Structure
 
 ```
-index.html                       Home page (hero, about, skills, work, process, contact)
+index.html                       Home page (hero art, work, about, principles, skills, process, contact)
 case-studies/bpda-smart-app.html BPDA Telemedicine case study
 css/style.css                    All styles (theme tokens at the top)
 js/script.js                     Theme toggle, mobile nav, scroll effects
+assets/work/                     Product screenshots (WebP)
 404.html, favicon.svg, robots.txt, sitemap.xml, CNAME
 ```
 
