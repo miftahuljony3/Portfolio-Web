@@ -149,80 +149,20 @@
 @font-face {
   font-family: 'Anek Bangla';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500 800;
   font-stretch: 100%;
   font-display: optional;
-  src: url(../fonts/anek-bangla-bengali-418c763509.woff2) format('woff2');
+  src: url(../fonts/anek-bangla-bengali-700-b9cc08db74.woff2) format('woff2');
   unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
 }
 /* Anek Bangla — latin */
 @font-face {
   font-family: 'Anek Bangla';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500 800;
   font-stretch: 100%;
   font-display: optional;
-  src: url(../fonts/anek-bangla-latin-9d14431a27.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* Anek Bangla — bengali */
-@font-face {
-  font-family: 'Anek Bangla';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: optional;
-  src: url(../fonts/anek-bangla-bengali-418c763509.woff2) format('woff2');
-  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
-}
-/* Anek Bangla — latin */
-@font-face {
-  font-family: 'Anek Bangla';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: optional;
-  src: url(../fonts/anek-bangla-latin-9d14431a27.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* Anek Bangla — bengali */
-@font-face {
-  font-family: 'Anek Bangla';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: 100%;
-  font-display: optional;
-  src: url(../fonts/anek-bangla-bengali-418c763509.woff2) format('woff2');
-  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
-}
-/* Anek Bangla — latin */
-@font-face {
-  font-family: 'Anek Bangla';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: 100%;
-  font-display: optional;
-  src: url(../fonts/anek-bangla-latin-9d14431a27.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* Anek Bangla — bengali */
-@font-face {
-  font-family: 'Anek Bangla';
-  font-style: normal;
-  font-weight: 800;
-  font-stretch: 100%;
-  font-display: optional;
-  src: url(../fonts/anek-bangla-bengali-418c763509.woff2) format('woff2');
-  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
-}
-/* Anek Bangla — latin */
-@font-face {
-  font-family: 'Anek Bangla';
-  font-style: normal;
-  font-weight: 800;
-  font-stretch: 100%;
-  font-display: optional;
-  src: url(../fonts/anek-bangla-latin-9d14431a27.woff2) format('woff2');
+  src: url(../fonts/anek-bangla-latin-700-b750b4355d.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* Hind Siliguri — bengali */
@@ -247,24 +187,6 @@
 @font-face {
   font-family: 'Hind Siliguri';
   font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(../fonts/hind-siliguri-bengali-7f39fcb7fe.woff2) format('woff2');
-  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
-}
-/* Hind Siliguri — latin */
-@font-face {
-  font-family: 'Hind Siliguri';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(../fonts/hind-siliguri-latin-50c07c577a.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* Hind Siliguri — bengali */
-@font-face {
-  font-family: 'Hind Siliguri';
-  font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url(../fonts/hind-siliguri-bengali-b92b5da6d4.woff2) format('woff2');
@@ -277,24 +199,6 @@
   font-weight: 600;
   font-display: swap;
   src: url(../fonts/hind-siliguri-latin-c39d0db6f5.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* Hind Siliguri — bengali */
-@font-face {
-  font-family: 'Hind Siliguri';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(../fonts/hind-siliguri-bengali-b6033f70da.woff2) format('woff2');
-  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
-}
-/* Hind Siliguri — latin */
-@font-face {
-  font-family: 'Hind Siliguri';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(../fonts/hind-siliguri-latin-e8f0fc0cab.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* Tiro Bangla — bengali */

@@ -29,7 +29,7 @@ PRELOAD_EN = (
     '  <link rel="preload" href="fonts/instrument-serif-latin-5a51946dff.woff2" as="font" type="font/woff2" crossorigin>'
 )
 PRELOAD_BN = (
-    '  <link rel="preload" href="fonts/anek-bangla-bengali-418c763509.woff2" as="font" type="font/woff2" crossorigin>\n'
+    '  <link rel="preload" href="fonts/anek-bangla-bengali-700-b9cc08db74.woff2" as="font" type="font/woff2" crossorigin>\n'
     '  <link rel="preload" href="fonts/hind-siliguri-bengali-8ae56aab76.woff2" as="font" type="font/woff2" crossorigin>'
 )
 SWITCH_EN = '<a class="lang-switch" href="bn/" hreflang="bn"><span class="is-on" lang="en">EN</span><span lang="bn">বাং</span><span class="sr-only"> (বাংলা সংস্করণ)</span></a>'
