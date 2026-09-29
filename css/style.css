@@ -1600,3 +1600,7 @@ main > .section { content-visibility: auto; contain-intrinsic-size: auto 1100px;
 .slide .hero-layout { align-items: start; }
 .slide .hero-stage, .slide .art3d { margin-top: 40px; }
 @media (max-width: 1080px) { .slide .hero-stage, .slide .art3d { margin-top: 0; } }
+/* CLS: hero glows use fixed vertical offsets, not % of the hero's (font-dependent) height */
+.hero-art .aurora.a1 { top: -180px; }
+.hero-art .aurora.a2 { top: 40px; }
+.hero-art .aurora.a3 { top: 560px; bottom: auto; }
