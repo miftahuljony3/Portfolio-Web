@@ -210,15 +210,6 @@
   src: url(../fonts/tiro-bangla-bengali-a30206da9e.woff2) format('woff2');
   unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
 }
-/* Tiro Bangla — latin */
-@font-face {
-  font-family: 'Tiro Bangla';
-  font-style: italic;
-  font-weight: 400;
-  font-display: optional;
-  src: url(../fonts/tiro-bangla-latin-ab2f2d5544.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 /* Tiro Bangla — bengali */
 @font-face {
   font-family: 'Tiro Bangla';
@@ -227,15 +218,6 @@
   font-display: optional;
   src: url(../fonts/tiro-bangla-bengali-7132520bbc.woff2) format('woff2');
   unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
-}
-/* Tiro Bangla — latin */
-@font-face {
-  font-family: 'Tiro Bangla';
-  font-style: normal;
-  font-weight: 400;
-  font-display: optional;
-  src: url(../fonts/tiro-bangla-latin-bb748ffc6a.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* Metric-matched fallbacks: keep layout stable while web fonts load (prevents CLS) */
 @font-face { font-family: 'Inter Fallback'; src: local('Arial'), local('Liberation Sans'), local('Helvetica'); ascent-override: 90.49%; descent-override: 22.56%; line-gap-override: 0%; size-adjust: 107.06%; }
@@ -1442,7 +1424,7 @@ h1 .serif, h2 .serif, .cta-title .serif { background: linear-gradient(110deg, va
 :root[lang="bn"] {
   --font: 'Hind Siliguri', 'Noto Sans Bengali', 'Inter', system-ui, sans-serif;
   --display: 'Anek Bangla', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
-  --serif: 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif;
+  --serif: 'Instrument Serif', 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif; /* Latin glyphs from Instrument Serif, Bangla from Tiro */
   --mono: 'JetBrains Mono', 'Hind Siliguri', ui-monospace, monospace;
 }
 :root[lang="bn"] body { line-height: 1.85; font-size: 16.5px; }
