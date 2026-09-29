@@ -114,8 +114,23 @@ check_url() {
   return 1
 }
 
+# Security headers that must be present on HTML responses
+REQUIRED_HEADERS=(content-security-policy strict-transport-security x-content-type-options x-frame-options referrer-policy)
+
+check_headers() {
+  local pin="${1:-}" hdrs h missing=0
+  local args=(-sS -D - -o /dev/null --max-time 15)
+  [[ -n "$pin" ]] && args+=(-H "Cloudflare-Workers-Version-Overrides: ${WORKER_NAME}=\"${pin}\"")
+  hdrs="$(curl "${args[@]}" "${SITE_URL}/?h=${GIT_SHA}" | tr '[:upper:]' '[:lower:]')"
+  for h in "${REQUIRED_HEADERS[@]}"; do
+    grep -q "^${h}:" <<<"$hdrs" || { warn "missing security header: ${h}"; missing=1; }
+  done
+  return $missing
+}
+
 run_smoke() {
   local pin="${1:-}" check path expect needle failed=0
+  if check_headers "$pin"; then log "  ✓ security headers"; else failed=1; fi
   for check in "${SMOKE_CHECKS[@]}"; do
     read -r path expect needle <<<"$check"
     if check_url "${SITE_URL}${path}" "$expect" "$needle" "$pin"; then
@@ -131,11 +146,11 @@ run_smoke() {
 # 1. Preflight
 # -----------------------------------------------------------------------------
 log "Preflight (${GIT_SHA}: ${DEPLOY_MESSAGE})"
-for f in index.html bn/index.html i18n/bn.json 404.html css/style.css js/script.js wrangler.jsonc .assetsignore; do
+for f in index.html bn/index.html i18n/bn.json 404.html css/style.css js/script.js js/theme.js _headers wrangler.jsonc .assetsignore; do
   [[ -f "$f" ]] || die "missing required file: $f"
 done
 command -v node >/dev/null || die "node is required for the JS syntax check"
-node --check js/script.js || die "js/script.js has a syntax error"
+for js in js/script.js js/theme.js; do node --check "$js" || die "$js has a syntax error"; done
 python3 - <<'PY' || die "HTML nesting check failed"
 import html.parser, sys
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','source','track','wbr'}
@@ -154,9 +169,9 @@ for f in ['index.html', 'bn/index.html', '404.html', 'case-studies/bpda-smart-ap
     if p.errors or p.stack:
         print(f"{f}: {p.errors[:3]} unclosed={[t for t,_ in p.stack][:5]}", file=sys.stderr); sys.exit(1)
 PY
-python3 scripts/build-bn.py --check >/dev/null \
-  || die "bn/index.html is stale: run 'python3 scripts/build-bn.py' and commit the result"
-log "  ✓ files, JS syntax, HTML structure and Bangla build OK"
+python3 scripts/build.py --check >/dev/null \
+  || die "build output is stale: run 'python3 scripts/build.py' and commit the result"
+log "  ✓ files, JS syntax, HTML structure, asset stamps and Bangla build OK"
 command -v "$WRANGLER" >/dev/null || die "wrangler not found (set WRANGLER=...)"
 
 if [[ "$DRY_RUN" == "1" ]]; then

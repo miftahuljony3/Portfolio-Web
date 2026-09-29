@@ -24,18 +24,10 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-
-  <script>
-    try {
-      var t = localStorage.getItem('theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {}
-  </script>
+  <link rel="preload" href="../fonts/anek-bangla-bengali-418c763509.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/hind-siliguri-bengali-8ae56aab76.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css?v=584757a1e5">
+  <script src="../js/theme.js?v=811c5ee647"></script>
 
   <script type="application/ld+json">
   {
@@ -56,7 +48,7 @@
 
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#top" class="nav-logo" aria-label="মিফতাহুল জনি, হোম">
+      <a href="#top" class="nav-logo">
         <span class="coin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span><span class="logo-text">মিফতাহুল জনি<small>DevOps · সিস্টেম</small></span>
       </a>
       <nav aria-label="প্রধান মেনু">
@@ -71,7 +63,7 @@
         </ul>
       </nav>
       <div class="nav-actions">
-        <a class="lang-switch" href="../" hreflang="en" lang="en" aria-label="View English version"><span lang="en">EN</span><span class="is-on" lang="bn">বাং</span></a>
+        <a class="lang-switch" href="../" hreflang="en"><span lang="en">EN</span><span class="is-on" lang="bn">বাং</span><span class="sr-only" lang="en"> (English version)</span></a>
         <button class="icon-btn" id="theme-toggle" type="button" aria-label="রঙের থিম বদলান">
           <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -134,15 +126,15 @@
         <div class="hero-stage art3d" aria-hidden="true">
           <figure class="float-frame f1" data-depth="14">
             <div class="frame-bar"><span></span><span></span><span></span><em>portal.bpda.site</em></div>
-            <img src="../assets/work/bpda-portal-sm.webp" alt="" width="720" height="450">
+            <img src="../assets/work/bpda-portal-sm.webp" srcset="../assets/work/bpda-portal-xs.webp 480w, ../assets/work/bpda-portal-sm.webp 720w" sizes="(max-width: 560px) 78vw, (max-width: 1080px) 60vw, 34vw" decoding="async" alt="" width="720" height="450">
           </figure>
           <figure class="float-frame f2" data-depth="28">
             <div class="frame-bar"><span></span><span></span><span></span><em>mrjorg.site</em></div>
-            <img src="../assets/work/mjpay-sm.webp" alt="" width="720" height="450">
+            <img src="../assets/work/mjpay-sm.webp" srcset="../assets/work/mjpay-xs.webp 480w, ../assets/work/mjpay-sm.webp 720w" sizes="(max-width: 560px) 78vw, (max-width: 1080px) 60vw, 34vw" decoding="async" alt="" width="720" height="450">
           </figure>
           <figure class="float-frame f3" data-depth="44">
             <div class="frame-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
-            <img src="../assets/work/bpda-telemedicine-sm.webp" alt="" width="720" height="450">
+            <img src="../assets/work/bpda-telemedicine-sm.webp" srcset="../assets/work/bpda-telemedicine-xs.webp 480w, ../assets/work/bpda-telemedicine-sm.webp 720w" sizes="(max-width: 560px) 78vw, (max-width: 1080px) 60vw, 34vw" decoding="async" alt="" width="720" height="450">
           </figure>
           <div class="float-chip c-a" data-depth="60"><span class="chip-dot ok"></span> ~৮ সেকেন্ডে পেমেন্ট মিলেছে</div>
           <div class="float-chip c-b" data-depth="36"><span class="chip-rx">℞</span> ই-প্রেসক্রিপশন প্রিন্ট হয়েছে</div>
@@ -168,7 +160,7 @@
               <div class="tele-ring"></div>
               <figure class="tele-screen" data-depth="18">
                 <div class="frame-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
-                <img src="../assets/work/bpda-telemedicine-sm.webp" alt="" width="720" height="450" loading="lazy">
+                <img src="../assets/work/bpda-telemedicine-sm.webp" srcset="../assets/work/bpda-telemedicine-xs.webp 480w, ../assets/work/bpda-telemedicine-sm.webp 720w" sizes="(max-width: 560px) 78vw, (max-width: 1080px) 60vw, 34vw" decoding="async" alt="" width="720" height="450" loading="lazy">
               </figure>
               <div class="glass-card g-doc" data-depth="46"><span class="avatar">ডা.</span><div><b>নির্ধারিত ডাক্তার</b><small><span class="live-dot"></span> এখন অনলাইনে</small></div></div>
               <div class="glass-card g-call" data-depth="60"><span class="rec"></span><div><b>ভিডিও কনসালটেশন</b><small class="mono">00:12:48</small></div></div>
@@ -284,7 +276,7 @@ amount: "500.00"</pre>
             <a class="showcase-media" href="https://bpdatm.com" target="_blank" rel="noopener noreferrer" aria-label="BPDA টেলিমেডিসিন অ্যাপ খুলুন">
               <div class="browser">
                 <div class="frame-bar"><span></span><span></span><span></span><em>bpdatm.com</em></div>
-                <img src="../assets/work/bpda-telemedicine.webp" alt="BPDA টেলিমেডিসিন অ্যাপের হোম পেজ: প্রতিটি BPDA সেন্টারে ভিডিওতে ডাক্তার, হাতে ই-প্রেসক্রিপশন" width="1440" height="900" loading="lazy">
+                <img src="../assets/work/bpda-telemedicine.webp" srcset="../assets/work/bpda-telemedicine-xs.webp 480w, ../assets/work/bpda-telemedicine-sm.webp 720w, ../assets/work/bpda-telemedicine.webp 1440w" sizes="(max-width: 1080px) 92vw, 52vw" decoding="async" alt="BPDA টেলিমেডিসিন অ্যাপের হোম পেজ: প্রতিটি BPDA সেন্টারে ভিডিওতে ডাক্তার, হাতে ই-প্রেসক্রিপশন" width="1440" height="900" loading="lazy">
               </div>
             </a>
             <div class="showcase-info">
@@ -339,7 +331,7 @@ amount: "500.00"</pre>
             <a class="showcase-media" href="https://mrjorg.site" target="_blank" rel="noopener noreferrer" aria-label="MJPay খুলুন">
               <div class="browser">
                 <div class="frame-bar"><span></span><span></span><span></span><em>mrjorg.site</em></div>
-                <img src="../assets/work/mjpay.webp" alt="MJPay হোম পেজ: মোবাইল মানিতে পেমেন্ট, স্বয়ংক্রিয়ভাবে নিশ্চিত" width="1440" height="900" loading="lazy">
+                <img src="../assets/work/mjpay.webp" srcset="../assets/work/mjpay-xs.webp 480w, ../assets/work/mjpay-sm.webp 720w, ../assets/work/mjpay.webp 1440w" sizes="(max-width: 1080px) 92vw, 52vw" decoding="async" alt="MJPay হোম পেজ: মোবাইল মানিতে পেমেন্ট, স্বয়ংক্রিয়ভাবে নিশ্চিত" width="1440" height="900" loading="lazy">
               </div>
             </a>
             <div class="showcase-info">
@@ -398,7 +390,7 @@ amount: "500.00"</pre>
             <a class="card-media" href="https://portal.bpda.site" target="_blank" rel="noopener noreferrer" aria-label="BPDA হেলথ পোর্টাল খুলুন">
               <div class="browser">
                 <div class="frame-bar"><span></span><span></span><span></span><em>portal.bpda.site</em></div>
-                <img src="../assets/work/bpda-portal.webp" alt="BPDA হেলথ পোর্টাল: যাচাইকৃত ডাক্তার, হাসপাতাল ও স্বাস্থ্যকর্মী খুঁজুন" width="1440" height="900" loading="lazy">
+                <img src="../assets/work/bpda-portal.webp" srcset="../assets/work/bpda-portal-xs.webp 480w, ../assets/work/bpda-portal-sm.webp 720w, ../assets/work/bpda-portal.webp 1440w" sizes="(max-width: 1080px) 92vw, 44vw" decoding="async" alt="BPDA হেলথ পোর্টাল: যাচাইকৃত ডাক্তার, হাসপাতাল ও স্বাস্থ্যকর্মী খুঁজুন" width="1440" height="900" loading="lazy">
               </div>
             </a>
             <p class="project-meta"><span class="live-badge">লাইভ</span> হেলথকেয়ার · প্ল্যাটফর্ম</p>
@@ -414,7 +406,7 @@ amount: "500.00"</pre>
             <a class="card-media" href="https://bpdafms.com" target="_blank" rel="noopener noreferrer" aria-label="BPDA FMS খুলুন">
               <div class="browser">
                 <div class="frame-bar"><span></span><span></span><span></span><em>bpdafms.com</em></div>
-                <img src="../assets/work/bpda-fms.webp" alt="BPDA FMS: সহজ হিসাব, ড্যাশবোর্ড প্রিভিউসহ" width="1440" height="900" loading="lazy">
+                <img src="../assets/work/bpda-fms.webp" srcset="../assets/work/bpda-fms-xs.webp 480w, ../assets/work/bpda-fms-sm.webp 720w, ../assets/work/bpda-fms.webp 1440w" sizes="(max-width: 1080px) 92vw, 44vw" decoding="async" alt="BPDA FMS: সহজ হিসাব, ড্যাশবোর্ড প্রিভিউসহ" width="1440" height="900" loading="lazy">
               </div>
             </a>
             <p class="project-meta"><span class="live-badge">লাইভ</span> SaaS · ফিন্যান্স</p>
@@ -997,16 +989,16 @@ amount: "500.00"</pre>
     <div class="aurora a1" aria-hidden="true"></div><div class="aurora a2" aria-hidden="true"></div>
     <div class="container foot-grid">
       <div class="foot-brand">
-        <a href="#top" class="nav-logo" aria-label="মিফতাহুল জনি, উপরে ফিরুন"><span class="coin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span><span class="logo-text">মিফতাহুল জনি<small>DevOps · সিস্টেম</small></span></a>
+        <a href="#top" class="nav-logo"><span class="coin" aria-hidden="true"><span class="coin-body"><span class="coin-face coin-front"><b>MJ</b></span><span class="coin-edge"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="coin-face coin-back"><b>MJ</b></span></span></span><span class="logo-text">মিফতাহুল জনি<small>DevOps · সিস্টেম</small></span></a>
         <p>রংপুর, বাংলাদেশ থেকে নির্ভরযোগ্য নেটওয়ার্ক, সিস্টেম ও প্রোডাক্ট তৈরি করা প্রিন্সিপাল DevOps ও ইনফ্রাস্ট্রাকচার আর্কিটেক্ট।</p>
         <p class="eyebrow" style="margin:0"><span class="status-dot"></span> নতুন প্রজেক্টের জন্য প্রস্তুত</p>
       </div>
       <nav class="foot-col" aria-label="ঘুরে দেখুন">
-        <h4>ঘুরে দেখুন</h4>
+        <h2>ঘুরে দেখুন</h2>
         <ul><li><a href="#work">কাজ</a></li><li><a href="#solutions">সমাধান</a></li><li><a href="#systems">সিস্টেম</a></li><li><a href="#services">সার্ভিস</a></li><li><a href="#skills">দক্ষতা</a></li><li><a href="#about">পরিচিতি</a></li><li><a href="../case-studies/bpda-smart-app">কেস স্টাডি</a></li></ul>
       </nav>
       <div class="foot-col">
-        <h4>চালু প্রোডাক্ট</h4>
+        <h2>চালু প্রোডাক্ট</h2>
         <ul>
           <li><a href="https://bpdatm.com" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>BPDA টেলিমেডিসিন</a></li>
           <li><a href="https://mrjorg.site" target="_blank" rel="noopener noreferrer"><span class="live-dot"></span>MJPay</a></li>
@@ -1015,11 +1007,11 @@ amount: "500.00"</pre>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>জনপ্রিয় সমাধান</h4>
+        <h2>জনপ্রিয় সমাধান</h2>
         <ul><li><a href="#solutions">পেমেন্ট গেটওয়ে</a></li><li><a href="#solutions">হাসপাতাল ম্যানেজমেন্ট</a></li><li><a href="#solutions">স্কুল ম্যানেজমেন্ট</a></li><li><a href="#solutions">ISP বিলিং</a></li><li><a href="#solutions">ই-কমার্স ও POS</a></li></ul>
       </div>
       <div class="foot-col">
-        <h4>যোগাযোগ</h4>
+        <h2>যোগাযোগ</h2>
         <ul><li><a href="https://www.facebook.com/miftahuljony2" target="_blank" rel="noopener noreferrer">ফেসবুক ↗</a></li><li><a href="https://github.com/miftahuljony3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="#contact">সার্ভিস বুক করুন →</a></li><li><a href="../" hreflang="en" lang="en">English version</a></li></ul>
       </div>
     </div>
@@ -1033,6 +1025,6 @@ amount: "500.00"</pre>
     </div>
   </footer>
 
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js?v=a4ee93f711"></script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-document.documentElement.classList.add('js');
-
 // ===========================
 // UI strings (English / Bangla)
 // ===========================
@@ -58,7 +56,12 @@ function setMenu(open) {
 if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => setMenu(!navMenu.classList.contains('open')));
   navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) { setMenu(false); navToggle.focus(); }
+  });
+  document.addEventListener('click', e => {
+    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) setMenu(false);
+  });
 }
 
 // ===========================
@@ -231,8 +234,10 @@ if (bookForm) {
       footer
     ].join('\n');
 
-    // Open synchronously so popup blockers allow it
-    const win = window.open(MESSENGER_URL, '_blank', 'noopener');
+    // Open synchronously so popup blockers allow it. ('noopener' as a window feature makes
+    // window.open() return null even on success, so sever the opener manually instead.)
+    const win = window.open(MESSENGER_URL, '_blank');
+    if (win) { try { win.opener = null; } catch (err) {} }
     let copied = false;
     try { await navigator.clipboard.writeText(brief); copied = true; } catch (err) {}
 
@@ -263,7 +268,7 @@ if (bookForm) {
   let startedAt = 0;
   let remaining = DURATION;
   let userPaused = reduce;   // reduced motion: no autoplay until the user presses play
-  let hold = false;          // temporary pause (hover / focus / hidden tab)
+  const holds = new Set();   // temporary pauses: 'hover' | 'focus' | 'hidden' | 'offscreen'
 
   root.style.setProperty('--dur', DURATION + 'ms');
 
@@ -296,19 +301,22 @@ if (bookForm) {
   function schedule(reset) {
     clearTimeout(timer);
     if (reset) remaining = DURATION;
-    const playing = !userPaused && !hold;
+    const held = holds.size > 0;
+    const playing = !userPaused && !held;
     root.classList.toggle('is-playing', !userPaused);
     root.classList.toggle('is-paused', userPaused);
-    root.classList.toggle('is-hold', hold && !userPaused);
+    root.classList.toggle('is-hold', held && !userPaused);
     if (!playing) return;
     startedAt = performance.now();
     timer = setTimeout(() => show(index + 1), remaining);
   }
 
-  function setHold(on) {
-    if (on === hold) return;
-    if (on && !userPaused) remaining = Math.max(0, remaining - (performance.now() - startedAt));
-    hold = on;
+  function setHold(reason, on) {
+    if (on === holds.has(reason)) return;
+    const wasHeld = holds.size > 0;
+    if (on) holds.add(reason); else holds.delete(reason);
+    // freeze the remaining time when the first pause reason arrives
+    if (on && !wasHeld && !userPaused) remaining = Math.max(0, remaining - (performance.now() - startedAt));
     schedule(false);
   }
 
@@ -323,11 +331,19 @@ if (bookForm) {
 
   // Pause while the pointer or keyboard focus is inside, and when the tab is hidden
   const slidesEl = root.querySelector('.slides');
-  slidesEl.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setHold(true); });
-  slidesEl.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') setHold(false); });
-  root.addEventListener('focusin', () => setHold(true));
-  root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) setHold(false); });
-  document.addEventListener('visibilitychange', () => setHold(document.hidden));
+  slidesEl.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setHold('hover', true); });
+  slidesEl.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') setHold('hover', false); });
+  // Pause for keyboard focus only; a mouse click on a control shouldn't stop autoplay forever
+  root.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) setHold('focus', true); });
+  root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) setHold('focus', false); });
+  document.addEventListener('visibilitychange', () => setHold('hidden', document.hidden));
+  // Don't advance (or animate) while the hero is scrolled out of view
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      root.classList.toggle('is-offscreen', !entry.isIntersecting);
+      setHold('offscreen', !entry.isIntersecting);
+    }).observe(root);
+  }
 
   // Keyboard arrows when the slider has focus
   root.addEventListener('keydown', e => {

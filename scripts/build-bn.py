@@ -24,12 +24,16 @@ TRANSLATABLE_ATTRS = ("alt", "aria-label", "placeholder", "title", "data-label")
 # Text inside these elements is code/art and must never be translated
 PROTECTED = re.compile(r"(?s)(<(pre|script|style|svg|code)\b.*?</\2>)")
 
-BN_FONTS = (
-    '<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;600;700;800'
-    '&family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">'
+PRELOAD_EN = (
+    '  <link rel="preload" href="fonts/inter-latin-3100e775e8.woff2" as="font" type="font/woff2" crossorigin>\n'
+    '  <link rel="preload" href="fonts/instrument-serif-latin-5a51946dff.woff2" as="font" type="font/woff2" crossorigin>'
 )
-SWITCH_EN = '<a class="lang-switch" href="bn/" hreflang="bn" lang="bn" aria-label="বাংলা সংস্করণ দেখুন"><span class="is-on" lang="en">EN</span><span>বাং</span></a>'
-SWITCH_BN = '<a class="lang-switch" href="../" hreflang="en" lang="en" aria-label="View English version"><span lang="en">EN</span><span class="is-on" lang="bn">বাং</span></a>'
+PRELOAD_BN = (
+    '  <link rel="preload" href="fonts/anek-bangla-bengali-418c763509.woff2" as="font" type="font/woff2" crossorigin>\n'
+    '  <link rel="preload" href="fonts/hind-siliguri-bengali-8ae56aab76.woff2" as="font" type="font/woff2" crossorigin>'
+)
+SWITCH_EN = '<a class="lang-switch" href="bn/" hreflang="bn"><span class="is-on" lang="en">EN</span><span lang="bn">বাং</span><span class="sr-only"> (বাংলা সংস্করণ)</span></a>'
+SWITCH_BN = '<a class="lang-switch" href="../" hreflang="en"><span lang="en">EN</span><span class="is-on" lang="bn">বাং</span><span class="sr-only" lang="en"> (English version)</span></a>'
 
 
 def norm(text):
@@ -100,11 +104,22 @@ def build():
     head = head.replace(f'<link rel="canonical" href="{SITE}/">', f'<link rel="canonical" href="{SITE}/bn/">')
     head = head.replace('<meta property="og:type" content="website">',
                         '<meta property="og:type" content="website">\n  <meta property="og:locale" content="bn_BD">')
-    head = head.replace('<link rel="stylesheet" href="css/style.css">', BN_FONTS + '\n  <link rel="stylesheet" href="css/style.css">')
+    if PRELOAD_EN not in head:
+        raise SystemExit("font preload block not found in index.html head")
+    head = head.replace(PRELOAD_EN, PRELOAD_BN)
 
     html = head + body
 
-    # ---- relative URLs → one level up ----
+    # ---- relative URLs → one level up (href, src and every srcset candidate) ----
+    def fix_srcset(m):
+        parts = []
+        for cand in m.group(1).split(","):
+            cand = cand.strip()
+            if cand and not re.match(r"(https?:|/|data:|\.\./)", cand):
+                cand = "../" + cand
+            parts.append(cand)
+        return 'srcset="' + ", ".join(parts) + '"'
+    html = re.sub(r'srcset="([^"]+)"', fix_srcset, html)
     html = re.sub(
         r'\b(href|src)="(?!https?:|#|/|mailto:|tel:|data:|\.\./)([^"]+)"',
         r'\1="../\2"', html)
