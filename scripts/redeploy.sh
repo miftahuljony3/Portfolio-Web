@@ -38,6 +38,7 @@ DEPLOY_MESSAGE="${DEPLOY_MESSAGE:0:100}"
 # Paths that must be served correctly by the new version: "path expected_status [must_contain]"
 SMOKE_CHECKS=(
   "/ 200 id=\"hero-slides\""
+  "/bn/ 200 lang=\"bn\""
   "/css/style.css 200 .hero-slider"
   "/js/script.js 200 heroSlider"
   "/case-studies/bpda-smart-app 200 BPDA"
@@ -130,7 +131,7 @@ run_smoke() {
 # 1. Preflight
 # -----------------------------------------------------------------------------
 log "Preflight (${GIT_SHA}: ${DEPLOY_MESSAGE})"
-for f in index.html 404.html css/style.css js/script.js wrangler.jsonc .assetsignore; do
+for f in index.html bn/index.html i18n/bn.json 404.html css/style.css js/script.js wrangler.jsonc .assetsignore; do
   [[ -f "$f" ]] || die "missing required file: $f"
 done
 command -v node >/dev/null || die "node is required for the JS syntax check"
@@ -148,12 +149,14 @@ class P(html.parser.HTMLParser):
         if t in SVG_LEAF: return
         if s.stack and s.stack[-1][0] == t: s.stack.pop()
         else: s.errors.append(f"unexpected </{t}> at line {s.getpos()[0]}")
-for f in ['index.html', '404.html', 'case-studies/bpda-smart-app.html']:
+for f in ['index.html', 'bn/index.html', '404.html', 'case-studies/bpda-smart-app.html']:
     p = P(); p.feed(open(f, encoding='utf-8').read())
     if p.errors or p.stack:
         print(f"{f}: {p.errors[:3]} unclosed={[t for t,_ in p.stack][:5]}", file=sys.stderr); sys.exit(1)
 PY
-log "  ✓ files, JS syntax and HTML structure OK"
+python3 scripts/build-bn.py --check >/dev/null \
+  || die "bn/index.html is stale: run 'python3 scripts/build-bn.py' and commit the result"
+log "  ✓ files, JS syntax, HTML structure and Bangla build OK"
 command -v "$WRANGLER" >/dev/null || die "wrangler not found (set WRANGLER=...)"
 
 if [[ "$DRY_RUN" == "1" ]]; then

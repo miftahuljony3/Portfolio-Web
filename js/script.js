@@ -1,6 +1,28 @@
 document.documentElement.classList.add('js');
 
 // ===========================
+// UI strings (English / Bangla)
+// ===========================
+const IS_BN = document.documentElement.lang === 'bn';
+const T = IS_BN ? {
+  openMenu: 'মেনু খুলুন', closeMenu: 'মেনু বন্ধ করুন',
+  pause: 'অটোপ্লে থামান', play: 'অটোপ্লে চালু করুন',
+  required: 'অনুগ্রহ করে নাম, যোগাযোগের মাধ্যম ও প্রজেক্টের বিবরণ দিন।',
+  copied: 'ব্রিফ কপি হয়েছে। মেসেঞ্জারে পেস্ট করে পাঠিয়ে দিন।',
+  notCopied: 'মেসেঞ্জার খুলছে। ফর্মের তথ্য চ্যাটে কপি করে পাঠান।',
+  openMessenger: 'মেসেঞ্জার খুলুন ↗',
+  brief: ['আসসালামু আলাইকুম, আমি একটি সার্ভিস বুক করতে চাই।', 'সার্ভিস', 'নাম', 'যোগাযোগ', 'বাজেট', 'সময়সীমা', 'বিবরণ', 'এখনো নিশ্চিত নই', '(mjony3.com/bn থেকে পাঠানো)']
+} : {
+  openMenu: 'Open menu', closeMenu: 'Close menu',
+  pause: 'Pause autoplay', play: 'Play autoplay',
+  required: 'Please fill in your name, how to reach you, and the project details.',
+  copied: 'Brief copied. Paste it into Messenger and press send.',
+  notCopied: 'Messenger is opening. Copy your details from the form into the chat.',
+  openMessenger: 'Open Messenger ↗',
+  brief: ['Hi Miftahul, I would like to book a service.', 'Service', 'Name', 'Contact', 'Budget', 'Timeline', 'Details', 'Not sure yet', '(sent from mjony3.com)']
+};
+
+// ===========================
 // Theme toggle
 // ===========================
 const root = document.documentElement;
@@ -30,7 +52,7 @@ const navMenu = document.getElementById('nav-menu');
 function setMenu(open) {
   navMenu.classList.toggle('open', open);
   navToggle.setAttribute('aria-expanded', String(open));
-  navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  navToggle.setAttribute('aria-label', open ? T.closeMenu : T.openMenu);
 }
 
 if (navToggle && navMenu) {
@@ -187,23 +209,26 @@ if (bookForm) {
     });
     if (firstInvalid) {
       bookStatus.className = 'form-note err';
-      bookStatus.textContent = 'Please fill in your name, how to reach you, and the project details.';
+      bookStatus.textContent = T.required;
       firstInvalid.focus();
       return;
     }
 
+    const [greet, lService, lName, lContact, lBudget, lTimeline, lDetails, notSure, footer] = T.brief;
+    const checked = bookForm.querySelector('input[name="service"]:checked');
+    const serviceLabel = checked ? checked.nextElementSibling.textContent : data.get('service');
     const brief = [
-      'Hi Miftahul, I would like to book a service.',
+      greet,
       '',
-      `Service: ${data.get('service')}`,
-      `Name: ${data.get('name')}`,
-      `Contact: ${data.get('reach')}`,
-      `Budget: ${data.get('budget') || 'Not sure yet'}`,
-      `Timeline: ${data.get('timeline')}`,
+      `${lService}: ${serviceLabel}`,
+      `${lName}: ${data.get('name')}`,
+      `${lContact}: ${data.get('reach')}`,
+      `${lBudget}: ${data.get('budget') || notSure}`,
+      `${lTimeline}: ${data.get('timeline')}`,
       '',
-      `Details: ${data.get('details')}`,
+      `${lDetails}: ${data.get('details')}`,
       '',
-      '(sent from mjony3.com)'
+      footer
     ].join('\n');
 
     // Open synchronously so popup blockers allow it
@@ -213,10 +238,10 @@ if (bookForm) {
 
     bookStatus.className = 'form-note ok';
     bookStatus.textContent = copied
-      ? 'Brief copied. Paste it into Messenger and press send.'
-      : 'Messenger is opening. Copy your details from the form into the chat.';
+      ? T.copied
+      : T.notCopied;
     if (!win) {
-      bookStatus.innerHTML = `${bookStatus.textContent} <a href="${MESSENGER_URL}" target="_blank" rel="noopener noreferrer">Open Messenger ↗</a>`;
+      bookStatus.innerHTML = `${bookStatus.textContent} <a href="${MESSENGER_URL}" target="_blank" rel="noopener noreferrer">${T.openMessenger}</a>`;
     }
   });
 }
@@ -292,7 +317,7 @@ if (bookForm) {
   root.querySelector('[data-next]').addEventListener('click', () => show(index + 1));
   toggleBtn.addEventListener('click', () => {
     userPaused = !userPaused;
-    toggleBtn.setAttribute('aria-label', userPaused ? 'Play autoplay' : 'Pause autoplay');
+    toggleBtn.setAttribute('aria-label', userPaused ? T.play : T.pause);
     schedule(true);
   });
 
@@ -322,6 +347,6 @@ if (bookForm) {
     x0 = y0 = null;
   }, { passive: true });
 
-  if (userPaused) toggleBtn.setAttribute('aria-label', 'Play autoplay');
+  if (userPaused) toggleBtn.setAttribute('aria-label', T.play);
   schedule(true);
 })();

@@ -1180,3 +1180,62 @@ h1 .serif, h2 .serif, .cta-title .serif { background: linear-gradient(110deg, va
 .g-hook { white-space: pre; }
 .hero-stage .float-chip { transform: translate3d(var(--px, 0), var(--py, 0), 90px); }
 .hero-stage .hero-coin { transform: translate3d(var(--px, 0), var(--py, 0), 120px); }
+
+/* =========================================================
+   Language switch
+   ========================================================= */
+.lang-switch {
+  display: inline-flex; align-items: center; padding: 3px; border-radius: 999px; gap: 2px;
+  border: 1px solid var(--border-strong); background: var(--surface); font-size: 0.78rem; font-weight: 600;
+}
+.lang-switch span { padding: 5px 9px; border-radius: 999px; color: var(--text-muted); transition: color .2s, background-color .2s; line-height: 1.2; }
+.lang-switch span[lang="bn"], .lang-switch span:last-child { font-family: 'Hind Siliguri', var(--font); }
+.lang-switch .is-on { color: #fff; background: linear-gradient(120deg, var(--c1), color-mix(in srgb, var(--c1) 45%, var(--c2))); }
+.lang-switch:hover span:not(.is-on) { color: var(--text); }
+
+/* =========================================================
+   Bangla typography — premium, colourful
+   ========================================================= */
+:root[lang="bn"] {
+  --font: 'Hind Siliguri', 'Noto Sans Bengali', 'Inter', system-ui, sans-serif;
+  --display: 'Anek Bangla', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  --serif: 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif;
+  --mono: 'JetBrains Mono', 'Hind Siliguri', ui-monospace, monospace;
+}
+:root[lang="bn"] body { line-height: 1.85; font-size: 16.5px; }
+:root[lang="bn"] :is(h1, h2, h3, h4, .hero-name, .section-title, .cta-title, .project-title, .why-grid b, .stats dd, .logo-text) {
+  font-family: var(--display); letter-spacing: 0;
+}
+:root[lang="bn"] :is(.hero-name, .section-title, .cta-title) { line-height: 1.28; font-weight: 700; }
+:root[lang="bn"] .hero-name { font-size: clamp(2.4rem, 5.4vw, 4.6rem); }
+:root[lang="bn"] .slide .hero-name { font-size: clamp(2.2rem, 4.8vw, 4.1rem); }
+:root[lang="bn"] .project-title { line-height: 1.3; }
+:root[lang="bn"] :is(.section-kicker, .project-meta, .slide-kicker, .hero-role, .why-k, .foot-col h4, .facts dt, .summary dt, .sol-cat, .flow-title span, .trust-label, .book-form legend, .field > span, .st-num) {
+  letter-spacing: 0.02em; text-transform: none;
+}
+:root[lang="bn"] .hero-role { font-size: 0.92rem; }
+:root[lang="bn"] .marquee-track { font-family: var(--serif); }
+
+/* Colourful shimmering accent words */
+:root[lang="bn"] :is(h1, h2) .serif, :root[lang="bn"] .cta-title .serif {
+  font-family: var(--serif); font-style: italic; font-weight: 400; padding: 0 .08em .06em;
+  background: linear-gradient(100deg, var(--c1) 0%, var(--c2) 25%, var(--c4) 50%, var(--c3) 75%, var(--c1) 100%);
+  background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: bn-shimmer 7s linear infinite;
+}
+@keyframes bn-shimmer { to { background-position: -220% 0; } }
+:root[lang="bn"] .hl {
+  background: linear-gradient(transparent 58%, color-mix(in srgb, var(--c4) 50%, transparent) 58%, color-mix(in srgb, var(--c3) 40%, transparent) 94%, transparent 94%);
+}
+:root[lang="bn"] .hero-name .hl { background-size: 100% 100%; padding-bottom: .05em; }
+:root[lang="bn"] .stats dd, :root[lang="bn"] .why-grid b { font-weight: 800; }
+:root[lang="bn"] .principle-num, :root[lang="bn"] .step { font-family: var(--display); font-style: normal; font-weight: 800; }
+:root[lang="bn"] .slide-points li, :root[lang="bn"] .chips li, :root[lang="bn"] .opt span { font-size: 0.9rem; }
+@media (prefers-reduced-motion: reduce) { :root[lang="bn"] .serif { animation: none !important; } }
+@media (max-width: 560px) { .lang-switch span { padding: 5px 7px; } }
+/* Bangla labels: proportional font instead of monospace (mono spaces look gappy in Bangla) */
+:root[lang="bn"] :is(.section-kicker, .why-k, .project-meta, .slide-kicker, .hero-role, .trust-label, .svc-tag, .foot-col h4,
+  .facts dt, .summary dt, .sol-cat, .flow-title span, .flow-time, .st-num, .book-form legend, .field > span, .ready, .step,
+  .portrait-caption span, .logo-text small, .badge, .live-badge, .feat.key::after, .stats .stat-key::before) {
+  font-family: var(--font);
+}

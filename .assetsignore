@@ -10,3 +10,4 @@ node_modules
 case-studies/*.md
 js/worker.js
 scripts
+i18n
