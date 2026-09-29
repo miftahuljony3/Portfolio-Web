@@ -1,44 +1,27 @@
 # Portfolio-Web
 
-A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript.
+Personal portfolio of **Miftahul Jony**, full-stack developer. Live at **https://mjony3.com**.
 
-## Features
-
-- **Responsive Design** — Looks great on desktop, tablet, and mobile
-- **Dark Theme** — Sleek dark color scheme with accent highlights
-- **Smooth Animations** — Fade-in effects and hover transitions
-- **Mobile Navigation** — Hamburger menu for small screens
-- **Sections** — Hero, About, Skills, Projects, and Contact
-- **GitHub Pages Ready** — Deploy directly from the repository
-
-## Getting Started
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Customize the content in `index.html` with your own information
-
-## Deployment
-
-This site is ready to deploy on [GitHub Pages](https://pages.github.com/):
-
-1. Go to **Settings → Pages** in your repository
-2. Set the source to the `main` branch
-3. Your site will be live at `https://<username>.github.io/Portfolio-Web/`
-
-## Customization
-
-- Edit `index.html` to update your name, bio, skills, and projects
-- Modify `css/style.css` to change colors, fonts, and layout
-- Update `js/script.js` to add or modify interactive behavior
+A dependency-free static site (HTML, CSS, vanilla JS) with light/dark themes, responsive
+layout, accessible navigation and SEO metadata.
 
 ## Structure
 
 ```
-Portfolio-Web/
-├── index.html        # Main HTML page
-├── css/
-│   └── style.css     # Styles and responsive design
-├── js/
-│   └── script.js     # Interactivity and animations
-└── README.md
+index.html                       Home page (hero, about, skills, work, process, contact)
+case-studies/bpda-smart-app.html BPDA Telemedicine case study
+css/style.css                    All styles (theme tokens at the top)
+js/script.js                     Theme toggle, mobile nav, scroll effects
+404.html, favicon.svg, robots.txt, sitemap.xml, CNAME
 ```
+
+## Local preview
+
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+```
+
+## Deployment
+
+Every push to `main` deploys to GitHub Pages via `.github/workflows/static.yml`.
+The custom domain `mjony3.com` is set in **Settings → Pages → Custom domain** (and in `CNAME`).
