@@ -498,6 +498,113 @@ h1 .serif, h2 .serif {
 .callout p { margin: 0; color: var(--text); }
 .callout p + p { margin-top: 6px; color: var(--text-muted); }
 
+
+/* =========================================================
+   About — portrait art & strengths
+   ========================================================= */
+.about-portrait {
+  position: relative; isolation: isolate; overflow: hidden; margin-top: 40px; aspect-ratio: 1 / 1; max-width: 380px;
+  border-radius: 28px; border: 1px solid var(--border-strong); background: var(--surface);
+  display: grid; place-items: center;
+}
+.about-portrait .aurora { filter: blur(50px); }
+.about-portrait .aurora.a1 { width: 70%; height: 70%; left: -10%; top: -10%; max-width: none; max-height: none; }
+.about-portrait .aurora.a2 { width: 60%; height: 60%; right: -10%; top: 40%; max-width: none; max-height: none; }
+.about-rings { position: absolute; inset: 0; width: 100%; height: 100%; }
+.about-rings circle { fill: none; stroke: var(--border-strong); }
+.about-rings .dot-a { fill: var(--c2); stroke: none; }
+.about-rings .dot-b { fill: var(--c1); stroke: none; }
+.about-rings .orbit-spin { transform-origin: 150px 150px; }
+.about-portrait .logo-mark.big { width: 110px; height: 110px; font-size: 2.3rem; border-radius: 30px; }
+.portrait-caption { position: absolute; left: 20px; bottom: 16px; font-weight: 600; font-size: 0.95rem; line-height: 1.35; }
+.portrait-caption span { font-family: var(--mono); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+
+.about-body strong { color: var(--text); }
+.strengths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+.strengths li { display: flex; gap: 14px; padding: 20px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); transition: border-color .25s; }
+.strengths li:hover { border-color: var(--border-strong); }
+.strengths h3 { font-size: 1rem; letter-spacing: -0.01em; margin-bottom: 4px; }
+.strengths p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0 !important; }
+.s-icon {
+  flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px;
+  background: linear-gradient(140deg, color-mix(in srgb, var(--c1) 26%, transparent), color-mix(in srgb, var(--c2) 22%, transparent));
+  border: 1px solid var(--border-strong);
+}
+.s-icon.sm { width: 32px; height: 32px; border-radius: 10px; }
+.s-icon svg { width: 20px; height: 20px; fill: none; stroke: var(--text); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.s-icon.sm svg { width: 17px; height: 17px; }
+
+/* =========================================================
+   Systems & networking
+   ========================================================= */
+.section-sub { color: var(--text-muted); font-size: 1.08rem; margin-top: 16px; max-width: 58ch; }
+.arch {
+  position: relative; padding: 28px; border-radius: 28px; border: 1px solid var(--border);
+  background:
+    radial-gradient(60% 80% at 0% 0%, color-mix(in srgb, var(--c1) 10%, transparent), transparent 60%),
+    radial-gradient(50% 70% at 100% 100%, color-mix(in srgb, var(--c2) 10%, transparent), transparent 60%),
+    var(--surface);
+  margin-bottom: 24px;
+}
+.arch-cap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px; }
+.swipe-hint { display: none; font-family: var(--mono); font-size: 0.74rem; color: var(--text-muted); margin-bottom: 10px; }
+.arch-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.arch-svg { display: block; width: 100%; min-width: 860px; height: auto; font-family: var(--font); }
+.a-zone rect { fill: color-mix(in srgb, var(--text) 2.5%, transparent); stroke: var(--border); stroke-dasharray: 4 6; }
+.a-zone text { fill: var(--text-muted); font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-anchor: middle; }
+.a-node rect { fill: var(--surface-solid); stroke: var(--border-strong); }
+.a-node rect.a-edge { stroke: color-mix(in srgb, var(--c2) 60%, transparent); fill: color-mix(in srgb, var(--c2) 8%, var(--surface-solid)); }
+.a-node rect.a-core { stroke: color-mix(in srgb, var(--c1) 70%, transparent); fill: color-mix(in srgb, var(--c1) 10%, var(--surface-solid)); }
+.a-node rect.a-alt { stroke: color-mix(in srgb, var(--c3) 55%, transparent); fill: color-mix(in srgb, var(--c3) 7%, var(--surface-solid)); }
+.a-node rect.a-ok { stroke: color-mix(in srgb, var(--ok) 60%, transparent); fill: color-mix(in srgb, var(--ok) 8%, var(--surface-solid)); }
+.a-node text { fill: var(--text); font-size: 13px; font-weight: 600; text-anchor: middle; }
+.a-node text.a-sub { fill: var(--text-muted); font-size: 10.5px; font-weight: 400; font-family: var(--mono); }
+.a-flow path { fill: none; stroke: url(#ag); stroke-width: 1.8; stroke-dasharray: 6 6; animation: flow 1.6s linear infinite; }
+.a-flow path.a-out { stroke: var(--c3); opacity: .7; }
+.a-link path { fill: none; stroke: var(--border-strong); stroke-width: 1.2; }
+.a-arrow { fill: var(--c2); }
+.a-label { fill: var(--c2); font-family: var(--mono); font-size: 11px; text-anchor: middle; }
+.a-label-out { fill: var(--c3); }
+@keyframes flow { to { stroke-dashoffset: -24; } }
+
+.sys-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; }
+.netstack, .toolbox { padding: 30px; border-radius: 24px; border: 1px solid var(--border); background: var(--surface); }
+.panel-title { display: flex; align-items: center; gap: 12px; font-size: 1.15rem; letter-spacing: -0.015em; margin-bottom: 22px; }
+.layers { display: grid; gap: 8px; }
+.layers li {
+  position: relative; display: flex; gap: 16px; align-items: flex-start; padding: 14px 16px; border-radius: 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c1) calc(18% - var(--l) * 2.5%), transparent), color-mix(in srgb, var(--c2) calc(4% + var(--l) * 2.5%), transparent));
+  margin-left: calc(var(--l) * 6px); transition: transform .25s var(--ease), border-color .25s;
+}
+.layers li:hover { transform: translateX(4px); border-color: var(--border-strong); }
+.layer-tag {
+  flex: none; min-width: 44px; padding: 4px 0; text-align: center; border-radius: 8px;
+  font-family: var(--mono); font-size: 0.74rem; font-weight: 500; color: #fff; background: var(--grad);
+}
+.layers h4 { font-size: 0.95rem; margin-bottom: 2px; }
+.layers p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
+
+.toolbox-list { display: grid; gap: 0; }
+.toolbox-list li { display: grid; grid-template-columns: 128px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 0.9rem; }
+.toolbox-list li:last-child { border-bottom: 0; }
+.toolbox-list b { font-weight: 600; }
+.toolbox-list b::before { content: '▸ '; color: var(--accent); }
+.toolbox-list span { color: var(--text-muted); }
+
+/* Bento extras */
+.b-tall { grid-row: span 2; display: flex; flex-direction: column; }
+.topo { width: 100%; height: auto; margin-top: auto; padding-top: 24px; }
+.topo-links path { fill: none; stroke: var(--border-strong); stroke-width: 1.2; }
+.topo-pulse path { fill: none; stroke: var(--c2); stroke-width: 2; stroke-dasharray: 8 220; animation: pulseline 3.2s linear infinite; }
+.topo-pulse path + path { stroke: var(--c1); animation-delay: -1.6s; }
+.topo-nodes circle { fill: var(--surface-solid); stroke: var(--c2); stroke-width: 1.5; }
+.topo-nodes .n-core { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 30%, var(--surface-solid)); }
+.topo-labels text { fill: var(--text-muted); font-family: var(--mono); font-size: 9px; text-anchor: middle; }
+@keyframes pulseline { from { stroke-dashoffset: 228; } to { stroke-dashoffset: 0; } }
+.b-feature { background: linear-gradient(160deg, color-mix(in srgb, var(--tint) 12%, transparent), transparent 55%), var(--surface); }
+.b-feature h3 { font-size: 1.45rem; }
+
 /* =========================================================
    Reveal
    ========================================================= */
@@ -527,6 +634,9 @@ h1 .serif, h2 .serif {
   .b-wide { grid-column: span 2; }
   .process { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mini-grid, .duo { grid-template-columns: 1fr; }
+  .sys-grid { grid-template-columns: 1fr; }
+  .b-tall { grid-row: auto; }
+  .about-portrait { display: none; }
   .feat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -566,7 +676,11 @@ h1 .serif, h2 .serif {
   .flow, .flow.flow-6 { grid-template-columns: 1fr 1fr; }
   .feat-grid { grid-template-columns: 1fr; }
   .feat { flex-direction: row; }
-  .principles, .bento, .process, .facts { grid-template-columns: 1fr; }
+  .principles, .bento, .process, .facts, .strengths { grid-template-columns: 1fr; }
+  .arch, .netstack, .toolbox { padding: 18px; }
+  .swipe-hint { display: block; }
+  .layers li { margin-left: 0; }
+  .toolbox-list li { grid-template-columns: 1fr; gap: 2px; }
   .b-wide { grid-column: auto; }
   .mini-card { grid-template-columns: 1fr; }
   .card-product { padding: 20px; }
